@@ -1,0 +1,319 @@
+{
+  "_leia": "Numeração estável do acervo. O número de uma foto nunca muda: novas fotos entram no fim, com o próximo número livre. Rode acervo/gerar.py depois de editar este arquivo.",
+  "origem": "~/Downloads/Assets Marina Site Institucional",
+  "proximo_numero": 41,
+  "fotos": [
+    {
+      "n": 1,
+      "origem": "Dra. Marina Mariz 1.png",
+      "arquivos": [
+        "hero-acolhimento.jpg",
+        "amara/1.jpg"
+      ],
+      "desc": "Marina apoiando uma gestante de pé, testa com testa"
+    },
+    {
+      "n": 2,
+      "origem": "Dra. Marina Mariz 2.png",
+      "arquivos": [],
+      "desc": "Marina de touca com um recém-nascido no colo, sorrindo"
+    },
+    {
+      "n": 3,
+      "origem": "Dra. Marina Mariz 3.png",
+      "arquivos": [
+        "cirurgia.jpg"
+      ],
+      "desc": "Centro cirúrgico, duas profissionais em procedimento"
+    },
+    {
+      "n": 4,
+      "origem": "Dra. Marina Mariz 4.jpg",
+      "arquivos": [],
+      "desc": "Mãos folheando o álbum de fotos de um parto"
+    },
+    {
+      "n": 5,
+      "origem": "Dra. Marina Mariz 5.jpg",
+      "arquivos": [
+        "planejamento.jpg"
+      ],
+      "desc": "Marina sentada em ambiente claro, fora do hospital"
+    },
+    {
+      "n": 6,
+      "origem": "Dra. Marina Mariz 6.jpg",
+      "arquivos": [
+        "marina-sobre.jpg"
+      ],
+      "desc": "Retrato de Marina no consultório, blusa preta"
+    },
+    {
+      "n": 7,
+      "origem": "Dra. Marina Mariz 7.jpg",
+      "arquivos": [
+        "consultorio.jpg"
+      ],
+      "desc": "Marina em poltrona, espelho iluminado ao fundo"
+    },
+    {
+      "n": 8,
+      "origem": "Dra. Marina Mariz 8.jpg",
+      "arquivos": [],
+      "desc": "Variante da 07 — Marina na poltrona, olhando de lado"
+    },
+    {
+      "n": 9,
+      "origem": "Dra. Marina Mariz 9.png",
+      "arquivos": [
+        "amara/9.jpg"
+      ],
+      "desc": "Quatro profissionais de touca, close, sorrindo"
+    },
+    {
+      "n": 10,
+      "origem": "Dra. Marina Mariz 10.jpg",
+      "arquivos": [
+        "amara/10.jpg"
+      ],
+      "desc": "Equipe entregando o recém-nascido ao casal"
+    },
+    {
+      "n": 11,
+      "origem": "Dra. Marina Mariz 11.jpg",
+      "arquivos": [],
+      "desc": "Gestante em trabalho de parto, mão no rosto"
+    },
+    {
+      "n": 12,
+      "origem": "Dra. Marina Mariz 12.jpg",
+      "arquivos": [
+        "familia.jpg",
+        "amara/12.jpg"
+      ],
+      "desc": "Casal, bebê e duas profissionais no quarto"
+    },
+    {
+      "n": 13,
+      "origem": "Dra. Marina Mariz 13.jpg",
+      "arquivos": [],
+      "desc": "Marina de touca segurando um recém-nascido"
+    },
+    {
+      "n": 14,
+      "origem": "Dra. Marina Mariz 14.jpg",
+      "arquivos": [],
+      "desc": "Mulher deitada na maca, olhando para cima"
+    },
+    {
+      "n": 15,
+      "origem": "Dra. Marina Mariz 15.jpg",
+      "arquivos": [
+        "abraco.jpg",
+        "amara/15.jpg"
+      ],
+      "desc": "Abraço durante o trabalho de parto, apoio em pé"
+    },
+    {
+      "n": 16,
+      "origem": "Dra. Marina Mariz 16.jpeg",
+      "arquivos": [
+        "maos.jpg"
+      ],
+      "desc": "Mãozinha de recém-nascido segurando um dedo"
+    },
+    {
+      "n": 17,
+      "origem": "Dra. Marina Mariz 17.jpeg",
+      "arquivos": [
+        "comunidade.jpg",
+        "amara/17.jpg"
+      ],
+      "desc": "Três mulheres deitadas com o bebê na cama"
+    },
+    {
+      "n": 18,
+      "origem": "Dra. Marina Mariz 18.jpeg",
+      "arquivos": [],
+      "desc": "Variante da 03 — centro cirúrgico, outro ângulo"
+    },
+    {
+      "n": 19,
+      "origem": "Dra. Marina Mariz 19.jpg",
+      "arquivos": [
+        "saude-da-mulher.jpg",
+        "amara/19.jpg"
+      ],
+      "desc": "Quatro mulheres em pé, ambiente claro com plantas"
+    },
+    {
+      "n": 20,
+      "origem": "Dra. Marina Mariz 20.jpeg",
+      "arquivos": [
+        "pos-parto.jpg",
+        "amara/20.jpg"
+      ],
+      "desc": "Cinco pessoas com o bebê no quarto da maternidade"
+    },
+    {
+      "n": 21,
+      "origem": "Captura de Tela 2026-08-20 às 17.32.47.png",
+      "arquivos": [
+        "podcast-estudio-2.webp"
+      ],
+      "desc": "Marina no estúdio do podcast, de fone e óculos, falando ao microfone"
+    },
+    {
+      "n": 22,
+      "origem": "Captura de Tela 2026-08-20 às 17.11.01.png",
+      "arquivos": [
+        "podcast-apresentadoras.webp"
+      ],
+      "desc": "Marina e Carol Flores lado a lado sobre fundo neon, com o selo dos nomes"
+    },
+    {
+      "n": 23,
+      "origem": "Unsplash — adP0SsdMtMA (Unsplash License)",
+      "arquivos": [
+        "livros-gestacao.webp"
+      ],
+      "desc": "Gestante de perfil segurando a barriga, campo ao entardecer"
+    },
+    {
+      "n": 24,
+      "origem": "Unsplash — Z4GKcFAGck4 (Unsplash License)",
+      "arquivos": [
+        "livros-puerperio.webp"
+      ],
+      "desc": "Mãe com recém-nascido no colo, quarto claro"
+    },
+    {
+      "n": 25,
+      "origem": "Unsplash — deAAjXh8JOU (Unsplash License)",
+      "arquivos": [
+        "cursos-casal.webp"
+      ],
+      "desc": "Casal grávido ao entardecer com a foto do ultrassom, tons neutros"
+    },
+    {
+      "n": 26,
+      "origem": "Unsplash — t69LuHAFtW4 (Unsplash License)",
+      "arquivos": [
+        "cursos-gestante.webp"
+      ],
+      "desc": "Gestante sentada em poltrona de vime, mãos na barriga"
+    },
+    {
+      "n": 27,
+      "origem": "Unsplash — mcKqoZh0DkI (Unsplash License)",
+      "arquivos": [
+        "cursos-bebe.webp"
+      ],
+      "desc": "Mãe sorrindo com recém-nascido no colo, luz suave"
+    },
+    {
+      "n": 28,
+      "origem": "Unsplash — b1D2DGMMv2k (Unsplash License)",
+      "arquivos": [
+        "eventos-roda.webp"
+      ],
+      "desc": "Roda de conversa em sala clara, pessoas sentadas em círculo"
+    },
+    {
+      "n": 29,
+      "origem": "Unsplash — qH3kUl3JUxc (Unsplash License)",
+      "arquivos": [
+        "eventos-imersao.webp"
+      ],
+      "desc": "Gestante de perfil em tons neutros, fundo claro de estúdio"
+    },
+    {
+      "n": 30,
+      "origem": "Unsplash — GD4jccM_K_E (Unsplash License)",
+      "arquivos": [
+        "eventos-aula.webp"
+      ],
+      "desc": "Mulher em chamada de vídeo na mesa de trabalho, parede de tijolo"
+    },
+    {
+      "n": 31,
+      "origem": "Unsplash — Luf_K5T6Cgk (Unsplash License)",
+      "arquivos": [
+        "eventos-maes.webp"
+      ],
+      "desc": "Duas mães sentadas com os bebês no colo, fundo branco"
+    },
+    {
+      "n": 32,
+      "origem": "Pexels — 7540301 (Pexels License)",
+      "arquivos": [
+        "ebooks-leitura-digital.jpg"
+      ],
+      "desc": "Mulher lendo em leitor digital deitada na cama, manta bege"
+    },
+    {
+      "n": 33,
+      "origem": "Pexels — 5857831 (Pexels License)",
+      "arquivos": [
+        "ebooks-gestante-leitura.jpg"
+      ],
+      "desc": "Gestante lendo livro sentada junto à janela, plantas ao fundo"
+    },
+    {
+      "n": 34,
+      "origem": "Pexels — 27177487 (Pexels License)",
+      "arquivos": [
+        "ebooks-tablet.jpg"
+      ],
+      "desc": "Mulher de camisa branca lendo em tablet, luz natural"
+    },
+    {
+      "n": 35,
+      "origem": "Pexels — 7623615 (Pexels License)",
+      "arquivos": [
+        "materiais-anotacoes.jpg"
+      ],
+      "desc": "Mulher anotando em caderno em casa, xícara de chá ao lado"
+    },
+    {
+      "n": 36,
+      "origem": "Pexels — 8554159 (Pexels License)",
+      "arquivos": [
+        "materiais-checklist.jpg"
+      ],
+      "desc": "Mãos preenchendo checklist em caderno com post-its na mesa"
+    },
+    {
+      "n": 37,
+      "origem": "Pexels — 7484911 (Pexels License)",
+      "arquivos": [
+        "materiais-gestante-celular.jpg"
+      ],
+      "desc": "Gestante sentada no sofá lendo no celular, notebook ao lado"
+    },
+    {
+      "n": 38,
+      "origem": "Unsplash — 2kopEHjST-g (Unsplash License)",
+      "arquivos": [
+        "formacao-discussao.webp"
+      ],
+      "desc": "Dois médicos discutindo um caso em tablet, jalecos brancos"
+    },
+    {
+      "n": 39,
+      "origem": "Unsplash — UYBAbwaqNIg (Unsplash License)",
+      "arquivos": [
+        "formacao-equipe.webp"
+      ],
+      "desc": "Dois profissionais de touca e máscara conferindo prancheta"
+    },
+    {
+      "n": 40,
+      "origem": "Unsplash — XjpH81N6rDc (Unsplash License)",
+      "arquivos": [
+        "formacao-consulta.webp"
+      ],
+      "desc": "Médico anotando durante consulta, paciente de costas"
+    }
+  ]
+}

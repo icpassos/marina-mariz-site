@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Acervo — Dra. Marina Mariz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap">
+<style>
+/* paleta do DS: Sereno e Oceano, acento Violeta 2 no claro e Violeta no escuro */
+:root{
+  --ground:#F3F1E8; --surface:#FEFEFE; --surface-2:#EFEDE2;
+  --ink:#0b1423; --ink-soft:#5C5768; --line:rgb(11 20 35 / .12);
+  --accent:#5648A8; --accent-soft:rgb(86 72 168 / .12);
+  --shadow:rgb(11 20 35 / .10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#1B2B3F; --surface:#22344A; --surface-2:#1F3044;
+    --ink:#EBEBEB; --ink-soft:#A9A5B8; --line:rgb(235 235 235 / .14);
+    --accent:#B8A3F5; --accent-soft:rgb(184 163 245 / .14);
+    --shadow:rgb(0 0 0 / .38);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#1B2B3F; --surface:#22344A; --surface-2:#1F3044;
+  --ink:#EBEBEB; --ink-soft:#A9A5B8; --line:rgb(235 235 235 / .14);
+  --accent:#B8A3F5; --accent-soft:rgb(184 163 245 / .14);
+  --shadow:rgb(0 0 0 / .38);
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 16px/1.6 Archivo,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.shell{width:min(1240px,calc(100% - 48px));margin-inline:auto}
+
+header{padding:clamp(44px,6vw,80px) 0 clamp(28px,3vw,40px)}
+.eyebrow{display:inline-block;margin:0 0 14px;font:700 .72rem/1 "JetBrains Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+h1{margin:0 0 16px;max-width:18ch;font:300 clamp(2.1rem,4.4vw,3.4rem)/1.05 Newsreader,Georgia,serif;letter-spacing:-.02em;text-wrap:balance}
+.dek{margin:0;max-width:62ch;color:var(--ink-soft)}
+code{font:500 .92em/1 "JetBrains Mono",monospace;padding:2px 6px;border-radius:5px;background:var(--accent-soft);color:var(--accent)}
+.legend{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:26px 0 0;padding-top:22px;border-top:1px solid var(--line);font-size:.86rem;color:var(--ink-soft)}
+.legend b{font:700 .7rem/1 "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(226px,1fr));gap:clamp(16px,1.8vw,24px);margin:0 0 clamp(56px,7vw,96px);padding:0;list-style:none}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:0 6px 22px var(--shadow);scroll-margin-top:24px}
+.card--free{background:var(--surface-2);border-style:dashed}
+.card__shot{margin:0;aspect-ratio:3/4;overflow:hidden;background:var(--surface-2)}
+.card__shot img{display:block;width:100%;height:100%;object-fit:cover}
+
+.card__meta{display:flex;align-items:baseline;gap:12px;padding:14px 16px 10px;border-bottom:1px solid var(--line)}
+.card__n{font:700 1.5rem/1 "JetBrains Mono",monospace;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--accent)}
+.card__facts{min-width:0;flex:1}
+.card__file{margin:0;font-size:.78rem;line-height:1.35;overflow-wrap:anywhere}
+.card__dim{margin:3px 0 0;font:500 .72rem/1 "JetBrains Mono",monospace;font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+
+.card__desc{margin:0;padding:12px 16px 0;font-size:.82rem;line-height:1.5;color:var(--ink-soft)}
+.card__use{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:0;padding:12px 16px 4px;font-size:.8rem;line-height:1.45;color:var(--ink-soft)}
+.chip{font:700 .64rem/1 "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.card--free .chip{background:transparent;color:var(--ink-soft);box-shadow:inset 0 0 0 1px var(--line)}
+.card__dest{margin:0;padding:8px 16px 16px;font:500 .72rem/1.45 "JetBrains Mono",monospace;overflow-wrap:anywhere}
+.card__dest:empty{padding-bottom:14px}
+
+footer{padding:0 0 clamp(48px,6vw,80px);font-size:.84rem;line-height:1.6;color:var(--ink-soft)}
+footer p{margin:0 0 10px;max-width:70ch}
+footer strong{color:var(--ink);font-weight:600}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header>
+    <span class="eyebrow">Referência de trabalho</span>
+    <h1>Acervo Marina Mariz</h1>
+    <p class="dek">As 40 fotos do acervo, cada uma com um número que não muda. Cite a foto por esse número — <code>troca a 09 pela 14</code> — e não há como errar de imagem.</p>
+    <p class="legend">
+      <b>Como ler</b>
+      <span>Ficha tracejada = ainda não entrou em nenhuma página do site.</span>
+      <span>A linha em mono no pé mostra o nome do arquivo dentro de <code>site/assets/img/</code>.</span>
+    </p>
+  </header>
+
+  <ul class="grid">
+      <li class="card" id="foto-01">
+        <figure class="card__shot"><img src="acervo/thumbs/01.jpg" alt="Marina apoiando uma gestante de pé, testa com testa" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">01</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 1.png</p>
+            <p class="card__dim">1086 × 1448</p>
+          </div>
+        </div>
+        <p class="card__desc">Marina apoiando uma gestante de pé, testa com testa</p>
+        <p class="card__use"><span class="chip">em uso</span>amara · blog · especialidades · eventos · index</p>
+        <p class="card__dest">hero-acolhimento.jpg · amara/1.jpg</p>
+      </li>
+      <li class="card card--free" id="foto-02">
+        <figure class="card__shot"><img src="acervo/thumbs/02.jpg" alt="Marina de touca com um recém-nascido no colo, sorrindo" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">02</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 2.png</p>
+            <p class="card__dim">941 × 1672</p>
+          </div>
+        </div>
+        <p class="card__desc">Marina de touca com um recém-nascido no colo, sorrindo</p>
+        <p class="card__use"><span class="chip">livre</span>ainda não entrou no projeto</p>
+        <p class="card__dest"></p>
+      </li>
+      <li class="card" id="foto-03">
+        <figure class="card__shot"><img src="acervo/thumbs/03.jpg" alt="Centro cirúrgico, duas profissionais em procedimento" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">03</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 3.png</p>
+            <p class="card__dim">960 × 1280</p>
+          </div>
+        </div>
+        <p class="card__desc">Centro cirúrgico, duas profissionais em procedimento</p>
+        <p class="card__use"><span class="chip">em uso</span>blog · blog-post-consulta · blog-post-material · blog-post-newsletter · blog-post-podcast · ebooks · especialidades · formacao-profissional</p>
+        <p class="card__dest">cirurgia.jpg</p>
+      </li>
+      <li class="card card--free" id="foto-04">
+        <figure class="card__shot"><img src="acervo/thumbs/04.jpg" alt="Mãos folheando o álbum de fotos de um parto" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">04</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 4.jpg</p>
+            <p class="card__dim">4128 × 6192</p>
+          </div>
+        </div>
+        <p class="card__desc">Mãos folheando o álbum de fotos de um parto</p>
+        <p class="card__use"><span class="chip">livre</span>ainda não entrou no projeto</p>
+        <p class="card__dest"></p>
+      </li>
+      <li class="card" id="foto-05">
+        <figure class="card__shot"><img src="acervo/thumbs/05.jpg" alt="Marina sentada em ambiente claro, fora do hospital" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">05</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 5.jpg</p>
+            <p class="card__dim">4128 × 6192</p>
+          </div>
+        </div>
+        <p class="card__desc">Marina sentada em ambiente claro, fora do hospital</p>
+        <p class="card__use"><span class="chip">em uso</span>blog · blog-post-consulta · blog-post-material · blog-post-newsletter · blog-post-podcast · especialidades · livros</p>
+        <p class="card__dest">planejamento.jpg</p>
+      </li>
+      <li class="card" id="foto-06">
+        <figure class="card__shot"><img src="acervo/thumbs/06.jpg" alt="Retrato de Marina no consultório, blusa preta" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">06</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 6.jpg</p>
+            <p class="card__dim">4128 × 6192</p>
+          </div>
+        </div>
+        <p class="card__desc">Retrato de Marina no consultório, blusa preta</p>
+        <p class="card__use"><span class="chip">em uso</span>index</p>
+        <p class="card__dest">marina-sobre.jpg</p>
+      </li>
+      <li class="card" id="foto-07">
+        <figure class="card__shot"><img src="acervo/thumbs/07.jpg" alt="Marina em poltrona, espelho iluminado ao fundo" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">07</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 7.jpg</p>
+            <p class="card__dim">4043 × 6065</p>
+          </div>
+        </div>
+        <p class="card__desc">Marina em poltrona, espelho iluminado ao fundo</p>
+        <p class="card__use"><span class="chip">em uso</span>especialidades · eventos · formacao-profissional · livros</p>
+        <p class="card__dest">consultorio.jpg</p>
+      </li>
+      <li class="card card--free" id="foto-08">
+        <figure class="card__shot"><img src="acervo/thumbs/08.jpg" alt="Variante da 07 — Marina na poltrona, olhando de lado" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">08</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 8.jpg</p>
+            <p class="card__dim">4043 × 6065</p>
+          </div>
+        </div>
+        <p class="card__desc">Variante da 07 — Marina na poltrona, olhando de lado</p>
+        <p class="card__use"><span class="chip">livre</span>ainda não entrou no projeto</p>
+        <p class="card__dest"></p>
+      </li>
+      <li class="card" id="foto-09">
+        <figure class="card__shot"><img src="acervo/thumbs/09.jpg" alt="Quatro profissionais de touca, close, sorrindo" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">09</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 9.png</p>
+            <p class="card__dim">682 × 909</p>
+          </div>
+        </div>
+        <p class="card__desc">Quatro profissionais de touca, close, sorrindo</p>
+        <p class="card__use"><span class="chip">em uso</span>amara</p>
+        <p class="card__dest">amara/9.jpg</p>
+      </li>
+      <li class="card" id="foto-10">
+        <figure class="card__shot"><img src="acervo/thumbs/10.jpg" alt="Equipe entregando o recém-nascido ao casal" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">10</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 10.jpg</p>
+            <p class="card__dim">1280 × 851</p>
+          </div>
+        </div>
+        <p class="card__desc">Equipe entregando o recém-nascido ao casal</p>
+        <p class="card__use"><span class="chip">em uso</span>index</p>
+        <p class="card__dest">amara/10.jpg</p>
+      </li>
+      <li class="card card--free" id="foto-11">
+        <figure class="card__shot"><img src="acervo/thumbs/11.jpg" alt="Gestante em trabalho de parto, mão no rosto" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">11</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 11.jpg</p>
+            <p class="card__dim">851 × 1280</p>
+          </div>
+        </div>
+        <p class="card__desc">Gestante em trabalho de parto, mão no rosto</p>
+        <p class="card__use"><span class="chip">livre</span>ainda não entrou no projeto</p>
+        <p class="card__dest"></p>
+      </li>
+      <li class="card" id="foto-12">
+        <figure class="card__shot"><img src="acervo/thumbs/12.jpg" alt="Casal, bebê e duas profissionais no quarto" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">12</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 12.jpg</p>
+            <p class="card__dim">1280 × 851</p>
+          </div>
+        </div>
+        <p class="card__desc">Casal, bebê e duas profissionais no quarto</p>
+        <p class="card__use"><span class="chip">em uso</span>amara · index · livros</p>
+        <p class="card__dest">familia.jpg · amara/12.jpg</p>
+      </li>
+      <li class="card card--free" id="foto-13">
+        <figure class="card__shot"><img src="acervo/thumbs/13.jpg" alt="Marina de touca segurando um recém-nascido" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">13</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 13.jpg</p>
+            <p class="card__dim">3207 × 4713</p>
+          </div>
+        </div>
+        <p class="card__desc">Marina de touca segurando um recém-nascido</p>
+        <p class="card__use"><span class="chip">livre</span>ainda não entrou no projeto</p>
+        <p class="card__dest"></p>
+      </li>
+      <li class="card card--free" id="foto-14">
+        <figure class="card__shot"><img src="acervo/thumbs/14.jpg" alt="Mulher deitada na maca, olhando para cima" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">14</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 14.jpg</p>
+            <p class="card__dim">4160 × 6240</p>
+          </div>
+        </div>
+        <p class="card__desc">Mulher deitada na maca, olhando para cima</p>
+        <p class="card__use"><span class="chip">livre</span>ainda não entrou no projeto</p>
+        <p class="card__dest"></p>
+      </li>
+      <li class="card" id="foto-15">
+        <figure class="card__shot"><img src="acervo/thumbs/15.jpg" alt="Abraço durante o trabalho de parto, apoio em pé" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">15</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 15.jpg</p>
+            <p class="card__dim">3859 × 5792</p>
+          </div>
+        </div>
+        <p class="card__desc">Abraço durante o trabalho de parto, apoio em pé</p>
+        <p class="card__use"><span class="chip">em uso</span>amara · especialidades · index · sobre</p>
+        <p class="card__dest">abraco.jpg · amara/15.jpg</p>
+      </li>
+      <li class="card" id="foto-16">
+        <figure class="card__shot"><img src="acervo/thumbs/16.jpg" alt="Mãozinha de recém-nascido segurando um dedo" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">16</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 16.jpeg</p>
+            <p class="card__dim">1800 × 2700</p>
+          </div>
+        </div>
+        <p class="card__desc">Mãozinha de recém-nascido segurando um dedo</p>
+        <p class="card__use"><span class="chip">em uso</span>blog · blog-post-consulta · blog-post-material · blog-post-podcast · eventos · livros · materiais-gratuitos</p>
+        <p class="card__dest">maos.jpg</p>
+      </li>
+      <li class="card" id="foto-17">
+        <figure class="card__shot"><img src="acervo/thumbs/17.jpg" alt="Três mulheres deitadas com o bebê na cama" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">17</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 17.jpeg</p>
+            <p class="card__dim">2768 × 4160</p>
+          </div>
+        </div>
+        <p class="card__desc">Três mulheres deitadas com o bebê na cama</p>
+        <p class="card__use"><span class="chip">em uso</span>amara · index</p>
+        <p class="card__dest">comunidade.jpg · amara/17.jpg</p>
+      </li>
+      <li class="card card--free" id="foto-18">
+        <figure class="card__shot"><img src="acervo/thumbs/18.jpg" alt="Variante da 03 — centro cirúrgico, outro ângulo" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">18</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 18.jpeg</p>
+            <p class="card__dim">960 × 1280</p>
+          </div>
+        </div>
+        <p class="card__desc">Variante da 03 — centro cirúrgico, outro ângulo</p>
+        <p class="card__use"><span class="chip">livre</span>ainda não entrou no projeto</p>
+        <p class="card__dest"></p>
+      </li>
+      <li class="card" id="foto-19">
+        <figure class="card__shot"><img src="acervo/thumbs/19.jpg" alt="Quatro mulheres em pé, ambiente claro com plantas" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">19</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 19.jpg</p>
+            <p class="card__dim">3828 × 5368</p>
+          </div>
+        </div>
+        <p class="card__desc">Quatro mulheres em pé, ambiente claro com plantas</p>
+        <p class="card__use"><span class="chip">em uso</span>amara · ebooks · especialidades · index · materiais-gratuitos</p>
+        <p class="card__dest">saude-da-mulher.jpg · amara/19.jpg</p>
+      </li>
+      <li class="card" id="foto-20">
+        <figure class="card__shot"><img src="acervo/thumbs/20.jpg" alt="Cinco pessoas com o bebê no quarto da maternidade" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">20</span>
+          <div class="card__facts">
+            <p class="card__file">Dra. Marina Mariz 20.jpeg</p>
+            <p class="card__dim">1066 × 1600</p>
+          </div>
+        </div>
+        <p class="card__desc">Cinco pessoas com o bebê no quarto da maternidade</p>
+        <p class="card__use"><span class="chip">em uso</span>amara · blog · blog-post-consulta · blog-post-material · blog-post-newsletter · blog-post-podcast · ebooks · especialidades · materiais-gratuitos</p>
+        <p class="card__dest">pos-parto.jpg · amara/20.jpg</p>
+      </li>
+      <li class="card" id="foto-21">
+        <figure class="card__shot"><img src="acervo/thumbs/21.jpg" alt="Marina no estúdio do podcast, de fone e óculos, falando ao microfone" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">21</span>
+          <div class="card__facts">
+            <p class="card__file">Captura de Tela 2026-08-20 às 17.32.47.png</p>
+            <p class="card__dim">868 × 972</p>
+          </div>
+        </div>
+        <p class="card__desc">Marina no estúdio do podcast, de fone e óculos, falando ao microfone</p>
+        <p class="card__use"><span class="chip">em uso</span>podcast</p>
+        <p class="card__dest">podcast-estudio-2.webp</p>
+      </li>
+      <li class="card card--free" id="foto-22">
+        <figure class="card__shot"><img src="acervo/thumbs/22.jpg" alt="Marina e Carol Flores lado a lado sobre fundo neon, com o selo dos nomes" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">22</span>
+          <div class="card__facts">
+            <p class="card__file">Captura de Tela 2026-08-20 às 17.11.01.png</p>
+            <p class="card__dim">306 × 373</p>
+          </div>
+        </div>
+        <p class="card__desc">Marina e Carol Flores lado a lado sobre fundo neon, com o selo dos nomes</p>
+        <p class="card__use"><span class="chip">importada</span>no projeto, mas fora de todas as páginas</p>
+        <p class="card__dest">podcast-apresentadoras.webp</p>
+      </li>
+      <li class="card" id="foto-23">
+        <figure class="card__shot"><img src="acervo/thumbs/23.jpg" alt="Gestante de perfil segurando a barriga, campo ao entardecer" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">23</span>
+          <div class="card__facts">
+            <p class="card__file">Unsplash — adP0SsdMtMA (Unsplash License)</p>
+            <p class="card__dim">800 × 1198</p>
+          </div>
+        </div>
+        <p class="card__desc">Gestante de perfil segurando a barriga, campo ao entardecer</p>
+        <p class="card__use"><span class="chip">em uso</span>livros</p>
+        <p class="card__dest">livros-gestacao.webp</p>
+      </li>
+      <li class="card" id="foto-24">
+        <figure class="card__shot"><img src="acervo/thumbs/24.jpg" alt="Mãe com recém-nascido no colo, quarto claro" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">24</span>
+          <div class="card__facts">
+            <p class="card__file">Unsplash — Z4GKcFAGck4 (Unsplash License)</p>
+            <p class="card__dim">800 × 1196</p>
+          </div>
+        </div>
+        <p class="card__desc">Mãe com recém-nascido no colo, quarto claro</p>
+        <p class="card__use"><span class="chip">em uso</span>livros</p>
+        <p class="card__dest">livros-puerperio.webp</p>
+      </li>
+      <li class="card" id="foto-25">
+        <figure class="card__shot"><img src="acervo/thumbs/25.jpg" alt="Casal grávido ao entardecer com a foto do ultrassom, tons neutros" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">25</span>
+          <div class="card__facts">
+            <p class="card__file">Unsplash — deAAjXh8JOU (Unsplash License)</p>
+            <p class="card__dim">1080 × 1620</p>
+          </div>
+        </div>
+        <p class="card__desc">Casal grávido ao entardecer com a foto do ultrassom, tons neutros</p>
+        <p class="card__use"><span class="chip">em uso</span>cursos</p>
+        <p class="card__dest">cursos-casal.webp</p>
+      </li>
+      <li class="card" id="foto-26">
+        <figure class="card__shot"><img src="acervo/thumbs/26.jpg" alt="Gestante sentada em poltrona de vime, mãos na barriga" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">26</span>
+          <div class="card__facts">
+            <p class="card__file">Unsplash — t69LuHAFtW4 (Unsplash License)</p>
+            <p class="card__dim">1080 × 1620</p>
+          </div>
+        </div>
+        <p class="card__desc">Gestante sentada em poltrona de vime, mãos na barriga</p>
+        <p class="card__use"><span class="chip">em uso</span>cursos</p>
+        <p class="card__dest">cursos-gestante.webp</p>
+      </li>
+      <li class="card" id="foto-27">
+        <figure class="card__shot"><img src="acervo/thumbs/27.jpg" alt="Mãe sorrindo com recém-nascido no colo, luz suave" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">27</span>
+          <div class="card__facts">
+            <p class="card__file">Unsplash — mcKqoZh0DkI (Unsplash License)</p>
+            <p class="card__dim">1080 × 1620</p>
+          </div>
+        </div>
+        <p class="card__desc">Mãe sorrindo com recém-nascido no colo, luz suave</p>
+        <p class="card__use"><span class="chip">em uso</span>cursos</p>
+        <p class="card__dest">cursos-bebe.webp</p>
+      </li>
+      <li class="card" id="foto-28">
+        <figure class="card__shot"><img src="acervo/thumbs/28.jpg" alt="Roda de conversa em sala clara, pessoas sentadas em círculo" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">28</span>
+          <div class="card__facts">
+            <p class="card__file">Unsplash — b1D2DGMMv2k (Unsplash License)</p>
+            <p class="card__dim">1080 × 1620</p>
+          </div>
+        </div>
+        <p class="card__desc">Roda de conversa em sala clara, pessoas sentadas em círculo</p>
+        <p class="card__use"><span class="chip">em uso</span>eventos</p>
+        <p class="card__dest">eventos-roda.webp</p>
+      </li>
+      <li class="card" id="foto-29">
+        <figure class="card__shot"><img src="acervo/thumbs/29.jpg" alt="Gestante de perfil em tons neutros, fundo claro de estúdio" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">29</span>
+          <div class="card__facts">
+            <p class="card__file">Unsplash — qH3kUl3JUxc (Unsplash License)</p>
+            <p class="card__dim">1080 × 1620</p>
+          </div>
+        </div>
+        <p class="card__desc">Gestante de perfil em tons neutros, fundo claro de estúdio</p>
+        <p class="card__use"><span class="chip">em uso</span>eventos</p>
+        <p class="card__dest">eventos-imersao.webp</p>
+      </li>
+      <li class="card" id="foto-30">
+        <figure class="card__shot"><img src="acervo/thumbs/30.jpg" alt="Mulher em chamada de vídeo na mesa de trabalho, parede de tijolo" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">30</span>
+          <div class="card__facts">
+            <p class="card__file">Unsplash — GD4jccM_K_E (Unsplash License)</p>
+            <p class="card__dim">1080 × 608</p>
+          </div>
+        </div>
+        <p class="card__desc">Mulher em chamada de vídeo na mesa de trabalho, parede de tijolo</p>
+        <p class="card__use"><span class="chip">em uso</span>eventos</p>
+        <p class="card__dest">eventos-aula.webp</p>
+      </li>
+      <li class="card" id="foto-31">
+        <figure class="card__shot"><img src="acervo/thumbs/31.jpg" alt="Duas mães sentadas com os bebês no colo, fundo branco" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">31</span>
+          <div class="card__facts">
+            <p class="card__file">Unsplash — Luf_K5T6Cgk (Unsplash License)</p>
+            <p class="card__dim">1080 × 720</p>
+          </div>
+        </div>
+        <p class="card__desc">Duas mães sentadas com os bebês no colo, fundo branco</p>
+        <p class="card__use"><span class="chip">em uso</span>eventos</p>
+        <p class="card__dest">eventos-maes.webp</p>
+      </li>
+      <li class="card" id="foto-32">
+        <figure class="card__shot"><img src="acervo/thumbs/32.jpg" alt="Mulher lendo em leitor digital deitada na cama, manta bege" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">32</span>
+          <div class="card__facts">
+            <p class="card__file">Pexels — 7540301 (Pexels License)</p>
+            <p class="card__dim">1200 × 1600</p>
+          </div>
+        </div>
+        <p class="card__desc">Mulher lendo em leitor digital deitada na cama, manta bege</p>
+        <p class="card__use"><span class="chip">em uso</span>ebooks</p>
+        <p class="card__dest">ebooks-leitura-digital.jpg</p>
+      </li>
+      <li class="card" id="foto-33">
+        <figure class="card__shot"><img src="acervo/thumbs/33.jpg" alt="Gestante lendo livro sentada junto à janela, plantas ao fundo" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">33</span>
+          <div class="card__facts">
+            <p class="card__file">Pexels — 5857831 (Pexels License)</p>
+            <p class="card__dim">1200 × 1600</p>
+          </div>
+        </div>
+        <p class="card__desc">Gestante lendo livro sentada junto à janela, plantas ao fundo</p>
+        <p class="card__use"><span class="chip">em uso</span>ebooks</p>
+        <p class="card__dest">ebooks-gestante-leitura.jpg</p>
+      </li>
+      <li class="card" id="foto-34">
+        <figure class="card__shot"><img src="acervo/thumbs/34.jpg" alt="Mulher de camisa branca lendo em tablet, luz natural" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">34</span>
+          <div class="card__facts">
+            <p class="card__file">Pexels — 27177487 (Pexels License)</p>
+            <p class="card__dim">1200 × 1600</p>
+          </div>
+        </div>
+        <p class="card__desc">Mulher de camisa branca lendo em tablet, luz natural</p>
+        <p class="card__use"><span class="chip">em uso</span>ebooks</p>
+        <p class="card__dest">ebooks-tablet.jpg</p>
+      </li>
+      <li class="card" id="foto-35">
+        <figure class="card__shot"><img src="acervo/thumbs/35.jpg" alt="Mulher anotando em caderno em casa, xícara de chá ao lado" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">35</span>
+          <div class="card__facts">
+            <p class="card__file">Pexels — 7623615 (Pexels License)</p>
+            <p class="card__dim">1200 × 1600</p>
+          </div>
+        </div>
+        <p class="card__desc">Mulher anotando em caderno em casa, xícara de chá ao lado</p>
+        <p class="card__use"><span class="chip">em uso</span>materiais-gratuitos</p>
+        <p class="card__dest">materiais-anotacoes.jpg</p>
+      </li>
+      <li class="card" id="foto-36">
+        <figure class="card__shot"><img src="acervo/thumbs/36.jpg" alt="Mãos preenchendo checklist em caderno com post-its na mesa" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">36</span>
+          <div class="card__facts">
+            <p class="card__file">Pexels — 8554159 (Pexels License)</p>
+            <p class="card__dim">1200 × 1600</p>
+          </div>
+        </div>
+        <p class="card__desc">Mãos preenchendo checklist em caderno com post-its na mesa</p>
+        <p class="card__use"><span class="chip">em uso</span>materiais-gratuitos</p>
+        <p class="card__dest">materiais-checklist.jpg</p>
+      </li>
+      <li class="card" id="foto-37">
+        <figure class="card__shot"><img src="acervo/thumbs/37.jpg" alt="Gestante sentada no sofá lendo no celular, notebook ao lado" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">37</span>
+          <div class="card__facts">
+            <p class="card__file">Pexels — 7484911 (Pexels License)</p>
+            <p class="card__dim">1200 × 1600</p>
+          </div>
+        </div>
+        <p class="card__desc">Gestante sentada no sofá lendo no celular, notebook ao lado</p>
+        <p class="card__use"><span class="chip">em uso</span>materiais-gratuitos</p>
+        <p class="card__dest">materiais-gestante-celular.jpg</p>
+      </li>
+      <li class="card" id="foto-38">
+        <figure class="card__shot"><img src="acervo/thumbs/38.jpg" alt="Dois médicos discutindo um caso em tablet, jalecos brancos" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">38</span>
+          <div class="card__facts">
+            <p class="card__file">Unsplash — 2kopEHjST-g (Unsplash License)</p>
+            <p class="card__dim">1080 × 608</p>
+          </div>
+        </div>
+        <p class="card__desc">Dois médicos discutindo um caso em tablet, jalecos brancos</p>
+        <p class="card__use"><span class="chip">em uso</span>formacao-profissional</p>
+        <p class="card__dest">formacao-discussao.webp</p>
+      </li>
+      <li class="card" id="foto-39">
+        <figure class="card__shot"><img src="acervo/thumbs/39.jpg" alt="Dois profissionais de touca e máscara conferindo prancheta" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">39</span>
+          <div class="card__facts">
+            <p class="card__file">Unsplash — UYBAbwaqNIg (Unsplash License)</p>
+            <p class="card__dim">1080 × 728</p>
+          </div>
+        </div>
+        <p class="card__desc">Dois profissionais de touca e máscara conferindo prancheta</p>
+        <p class="card__use"><span class="chip">em uso</span>formacao-profissional</p>
+        <p class="card__dest">formacao-equipe.webp</p>
+      </li>
+      <li class="card" id="foto-40">
+        <figure class="card__shot"><img src="acervo/thumbs/40.jpg" alt="Médico anotando durante consulta, paciente de costas" loading="lazy"></figure>
+        <div class="card__meta">
+          <span class="card__n">40</span>
+          <div class="card__facts">
+            <p class="card__file">Unsplash — XjpH81N6rDc (Unsplash License)</p>
+            <p class="card__dim">1080 × 608</p>
+          </div>
+        </div>
+        <p class="card__desc">Médico anotando durante consulta, paciente de costas</p>
+        <p class="card__use"><span class="chip">em uso</span>formacao-profissional</p>
+        <p class="card__dest">formacao-consulta.webp</p>
+      </li>
+  </ul>
+
+  <footer>
+    <p><strong>Fotos ainda livres:</strong> 02, 04, 08, 11, 13, 14, 18, 22.</p>
+    <p>Esta página é gerada por <code>acervo/gerar.py</code> a partir de <code>acervo/indice.json</code>. Foto nova entra no fim do índice, com o próximo número livre — os números já usados nunca mudam, senão toda conversa anterior passaria a apontar para a imagem errada.</p>
+  </footer>
+</div>
+</body>
+</html>

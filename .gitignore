@@ -1,0 +1,31 @@
+# Segredos e ambiente — nunca versionar
+laravel/.env
+laravel/.env.*
+!laravel/.env.example
+laravel/auth.json
+
+# Dependencias e artefatos de build
+laravel/vendor/
+laravel/node_modules/
+laravel/public/build/
+laravel/public/hot
+dist/
+
+# Estado de execucao — nada disso e codigo
+laravel/storage/*.key
+laravel/storage/pail
+laravel/storage/app/private/
+laravel/storage/app/public/
+laravel/storage/framework/cache/
+laravel/storage/framework/sessions/
+laravel/storage/framework/testing/
+laravel/storage/framework/views/
+laravel/storage/logs/
+laravel/.phpunit.result.cache
+laravel/.phpunit.cache/
+
+# Sistema operacional e editor
+.DS_Store
+.idea/
+.vscode/
+*.swp

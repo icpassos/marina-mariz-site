@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estados dos componentes — Dra. Marina Mariz</title>
+<meta name="description" content="Folha de revisão dos estados dos componentes compartilhados do site.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preload" href="assets/fonts/mozaic-400.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="assets/fonts/alverata-400.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<!-- ===== abertura ===== -->
+<div class="sheet scheme-04">
+  <div class="sheet__inner">
+    <span class="eyebrow">Referência de trabalho</span>
+    <h1 class="t-h1" style="margin:14px 0 14px;max-width:16ch;font-size:clamp(1.8rem,3.2vw,2.6rem)">Estados dos componentes</h1>
+    <p style="margin:0;max-width:64ch;color:var(--text-muted)">Os componentes compartilhados aparecem em mais de uma página — a newsletter está em todas as páginas de Educação e no <b>/blog</b>, a janela de download em <b>/educacao/materiais-gratuitos</b> e nos e-books gratuitos, a busca e a paginação no blog, os campos em todo formulário. Cada estado é revisado aqui uma vez, e não uma vez por página que o usa.</p>
+    <ul class="sheet__toc">
+      <li><a href="#newsletter">Newsletter</a></li>
+      <li><a href="#download">Download</a></li>
+      <li><a href="#contato-form">Contato</a></li>
+      <li><a href="#busca">Busca</a></li>
+      <li><a href="#vazios">Listas vazias</a></li>
+      <li><a href="#paginacao">Paginação</a></li>
+      <li><a href="#campos">Campos</a></li>
+      <li><a href="#botoes">Botões</a></li>
+      <li><a href="#mensagens">Mensagens</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== newsletter ===== -->
+<div class="sheet scheme-04" id="newsletter">
+  <div class="sheet__inner">
+    <header class="sheet__head">
+      <h2 class="t-h2">Newsletter</h2>
+      <p>Mesmo formulário em /blog e em /educacao/livros. Muda só o rótulo do botão e o campo <code>origem</code>.</p>
+      <span class="sheet__scheme">Oceano</span>
+    </header>
+
+    <div class="bench bench--2">
+      <div class="spec">
+        <span class="spec__label"><b>01</b> Repouso</span>
+        <div class="spec__stage">
+          <form class="bln__form" method="post" action="/newsletter" novalidate>
+            <input type="text" name="apelido" class="bln__trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="bln__row">
+              <p class="field"><label for="e1-nome">Nome</label><input id="e1-nome" name="nome" type="text" placeholder="Como podemos te chamar"></p>
+              <p class="field"><label for="e1-email">E-mail</label><input id="e1-email" name="email" type="email" placeholder="seu@email.com"></p>
+            </div>
+            <label class="bln__consent"><input type="checkbox"><span>Quero receber a newsletter e li a <a href="/politica-de-privacidade">Política de Privacidade</a></span></label>
+            <button class="btn btn--primary" type="button"><span class="btn__label">Assinar newsletter <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="spec__label"><b>02</b> Enviando</span>
+        <p class="spec__note">O botão fica desabilitado enquanto a requisição corre, para não gerar envio duplicado.</p>
+        <div class="spec__stage">
+          <form class="bln__form" method="post" action="/newsletter" novalidate>
+            <div class="bln__row">
+              <p class="field"><label for="e2-nome">Nome</label><input id="e2-nome" type="text" value="Marina" readonly></p>
+              <p class="field"><label for="e2-email">E-mail</label><input id="e2-email" type="email" value="marina@exemplo.com.br" readonly></p>
+            </div>
+            <label class="bln__consent"><input type="checkbox" checked><span>Quero receber a newsletter e li a <a href="/politica-de-privacidade">Política de Privacidade</a></span></label>
+            <button class="btn btn--primary" type="button" disabled><span class="btn__label">Enviando…</span></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="spec__label"><b>03</b> E-mail inválido</span>
+        <p class="spec__note">A mensagem fica ao lado do campo, nunca num alerta genérico no topo. O campo recebe <code>aria-invalid</code> e <code>aria-describedby</code>.</p>
+        <div class="spec__stage">
+          <form class="bln__form" method="post" action="/newsletter" novalidate>
+            <div class="bln__row">
+              <p class="field"><label for="e3-nome">Nome</label><input id="e3-nome" type="text" value="Marina"></p>
+              <p class="field field--erro"><label for="e3-email">E-mail</label><input id="e3-email" type="email" value="marina@" aria-invalid="true" aria-describedby="e3-erro">
+                <span class="field__erro" id="e3-erro"><i class="ph ph-warning-circle" aria-hidden="true"></i>Digite um e-mail válido, como nome@dominio.com.br</span>
+              </p>
+            </div>
+            <button class="btn btn--primary" type="button"><span class="btn__label">Assinar newsletter <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="spec__label"><b>04</b> Retornos do envio</span>
+        <p class="spec__note">Um por vez, escolhido no servidor. O erro carrega a ação de repetir.</p>
+        <div class="spec__stage" style="display:grid;gap:12px">
+          <p class="bln__msg bln__msg--ok"><i class="ph ph-check-circle" aria-hidden="true"></i>Pronto! Você vai receber as novidades no seu e-mail.</p>
+          <p class="bln__msg bln__msg--dup"><i class="ph ph-info" aria-hidden="true"></i>Você já está na lista. Fique de olho no e-mail.</p>
+          <p class="bln__msg bln__msg--err"><i class="ph ph-warning-circle" aria-hidden="true"></i>Não foi possível enviar agora. Tente novamente em alguns instantes. <a class="btn btn--outline" href="#newsletter"><span class="btn__label">Tentar novamente</span></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== download de material gratuito ===== -->
+<div class="sheet scheme-05" id="download">
+  <div class="sheet__inner">
+    <header class="sheet__head">
+      <h2 class="t-h2">Download de material gratuito</h2>
+      <p>Janela que abre no botão "Baixar grátis", em <b>/educacao/materiais-gratuitos</b> e nos e-books marcados como gratuitos. Grava lead com a origem e entrega o arquivo em nova aba, por link com token de 3 dias. Não envia e-mail. Regra: Escopo/Materiais Gratuitos.md, seção 3.</p>
+      <span class="sheet__scheme">Sereno</span>
+    </header>
+
+    <div class="bench bench--2">
+      <div class="spec">
+        <span class="spec__label"><b>01</b> Repouso</span>
+        <p class="spec__note">Ciência da Política é obrigatória; receber novidades é opcional e vem desmarcado.</p>
+        <div class="spec__stage">
+          <div class="baixar__corpo" style="border:1px solid rgb(var(--accent-rgb)/.3);border-radius:var(--radius-lg);background:rgb(var(--surface-rgb))">
+            <h3 class="t-h3">Para onde enviamos o material?</h3>
+            <p class="baixar__nota">Guia do pré-natal de alto risco</p>
+            <form class="bln__form" method="post" action="/materiais/download" novalidate>
+              <div class="bln__row">
+                <p class="field"><label for="d1-nome">Nome</label><input id="d1-nome" type="text" placeholder="Como podemos te chamar"></p>
+                <p class="field"><label for="d1-email">E-mail</label><input id="d1-email" type="email" placeholder="seu@email.com"></p>
+              </div>
+              <label class="bln__consent"><input type="checkbox"><span>Li e estou ciente da <a href="/politica-de-privacidade">Política de Privacidade</a></span></label>
+              <label class="bln__consent"><input type="checkbox"><span>Quero receber novidades por e-mail</span></label>
+              <button class="btn btn--primary" type="button"><span class="btn__label">Receber o material <i class="ph ph-arrow-right" aria-hidden="true"></i></span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="spec__label"><b>02</b> Sem ciência da Política</span>
+        <p class="spec__note">Enquanto a caixa obrigatória estiver desmarcada, o botão fica desabilitado. Newsletter desmarcada não impede nada.</p>
+        <div class="spec__stage">
+          <div class="baixar__corpo" style="border:1px solid rgb(var(--accent-rgb)/.3);border-radius:var(--radius-lg);background:rgb(var(--surface-rgb))">
+            <form class="bln__form" method="post" action="/materiais/download" novalidate>
+              <div class="bln__row">
+                <p class="field"><label for="d2-nome">Nome</label><input id="d2-nome" type="text" value="Marina"></p>
+                <p class="field field--erro"><label for="d2-email">E-mail</label><input id="d2-email" type="email" value="marina@" aria-invalid="true" aria-describedby="d2-erro">
+                  <span class="field__erro" id="d2-erro"><i class="ph ph-warning-circle" aria-hidden="true"></i>Digite um e-mail válido, como nome@dominio.com.br</span>
+                </p>
+              </div>
+              <label class="bln__consent"><input type="checkbox"><span>Li e estou ciente da <a href="/politica-de-privacidade">Política de Privacidade</a></span></label>
+              <button class="btn btn--primary" type="button" disabled><span class="btn__label">Receber o material</span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="spec__label"><b>03</b> Enviando</span>
+        <p class="spec__note">Botão desabilitado enquanto o servidor grava o lead e gera o link.</p>
+        <div class="spec__stage">
+          <div class="baixar__corpo" style="border:1px solid rgb(var(--accent-rgb)/.3);border-radius:var(--radius-lg);background:rgb(var(--surface-rgb))">
+            <form class="bln__form" method="post" action="/materiais/download" novalidate>
+              <div class="bln__row">
+                <p class="field"><label for="d3-nome">Nome</label><input id="d3-nome" type="text" value="Marina" readonly></p>
+                <p class="field"><label for="d3-email">E-mail</label><input id="d3-email" type="email" value="marina@exemplo.com.br" readonly></p>
+              </div>
+              <button class="btn btn--primary" type="button" disabled><span class="btn__label">Enviando…</span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="spec__label"><b>04</b> Pronto</span>
+        <p class="spec__note">Nada é enviado por e-mail: o arquivo abre em nova aba e baixa sozinho. O link vale 3 dias, e o botão fica na tela para quem tiver o download bloqueado pelo navegador.</p>
+        <div class="spec__stage" style="display:grid;gap:14px">
+          <p class="bln__msg bln__msg--ok"><i class="ph ph-check-circle" aria-hidden="true"></i>Seu material está baixando em uma nova aba.</p>
+          <a class="btn btn--primary" href="#download"><span class="btn__label"><i class="ph ph-download-simple" aria-hidden="true"></i> Baixar agora</span></a>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="spec__label"><b>05</b> Erro</span>
+        <p class="spec__note">Ou entrega, ou não entrega. Se o link não foi gerado, não existe meio-termo: a mensagem é de erro e o botão de baixar não aparece.</p>
+        <div class="spec__stage" style="display:grid;gap:14px">
+          <p class="bln__msg bln__msg--err"><i class="ph ph-warning-circle" aria-hidden="true"></i>Não foi possível enviar agora. Tente novamente em alguns instantes.</p>
+          <a class="btn btn--outline" href="#download"><span class="btn__label">Tentar novamente</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== formulário de contato ===== -->
+<div class="sheet scheme-04" id="contato-form">
+  <div class="sheet__inner">
+    <header class="sheet__head">
+      <h2 class="t-h2">Formulário de contato</h2>
+      <p>Vive em <b>/contato</b> e cai na caixa de mensagens do painel. Regra: Escopo/Contato.md, seção 2. O erro nunca apaga o que foi digitado, e o WhatsApp aparece como saída em todos os desfechos.</p>
+      <span class="sheet__scheme">Oceano</span>
+    </header>
+
+    <div class="bench bench--2">
+      <div class="spec">
+        <span class="spec__label"><b>01</b> Enviando</span>
+        <p class="spec__note">Botão desabilitado enquanto a mensagem viaja. Os campos ficam legíveis, não somem.</p>
+        <div class="spec__stage">
+          <form class="bln__form" method="post" action="/mensagens" novalidate>
+            <p class="field"><label for="c1-nome">Nome completo</label><input id="c1-nome" type="text" value="Marina" readonly></p>
+            <p class="field"><label for="c1-msg">Mensagem</label><textarea id="c1-msg" rows="3" readonly>Gostaria de agendar uma consulta.</textarea></p>
+            <button class="btn btn--primary" type="button" disabled><span class="btn__label">Enviando…</span></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="spec__label"><b>02</b> Campo inválido</span>
+        <p class="spec__note">O aviso nasce ao lado do campo que falhou — nunca num alerta genérico no topo.</p>
+        <div class="spec__stage">
+          <form class="bln__form" method="post" action="/mensagens" novalidate>
+            <p class="field field--erro"><label for="c2-email">E-mail</label><input id="c2-email" type="email" value="marina@" aria-invalid="true" aria-describedby="c2-erro">
+              <span class="field__erro" id="c2-erro"><i class="ph ph-warning-circle" aria-hidden="true"></i>Digite um e-mail válido, como nome@dominio.com.br</span>
+            </p>
+            <label class="bln__consent"><input type="checkbox"><span>Li e estou ciente da <a href="/politica-de-privacidade">Política de Privacidade</a></span></label>
+            <button class="btn btn--primary" type="button"><span class="btn__label">Enviar mensagem</span></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="spec__label"><b>03</b> Enviada</span>
+        <p class="spec__note">O formulário sai de cena e dá lugar ao recibo, com o WhatsApp para quem não quer esperar.</p>
+        <div class="spec__stage" style="display:grid;gap:14px">
+          <p class="bln__msg bln__msg--ok"><i class="ph ph-check-circle" aria-hidden="true"></i>Mensagem enviada. Respondemos em até 1 dia útil.</p>
+          <a class="btn btn--outline" href="https://wa.me/5531996082883" target="_blank" rel="noopener"><span class="btn__label"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i> Prefere falar agora? Chamar no WhatsApp</span></a>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="spec__label"><b>04</b> Erro no envio · guardada com falha interna</span>
+        <p class="spec__note">No erro, o texto digitado continua na tela. Na segunda mensagem, para a paciente é sucesso: a mensagem está guardada, e o problema de e-mail ou planilha fica no painel.</p>
+        <div class="spec__stage" style="display:grid;gap:14px">
+          <p class="bln__msg bln__msg--err"><i class="ph ph-warning-circle" aria-hidden="true"></i>Não foi possível enviar agora. Tente novamente em alguns instantes — ou chame no WhatsApp.</p>
+          <a class="btn btn--outline" href="#contato-form"><span class="btn__label">Tentar novamente</span></a>
+          <p class="bln__msg bln__msg--dup"><i class="ph ph-info" aria-hidden="true"></i>Recebemos sua mensagem. Se preferir resposta imediata, chame no WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== busca ===== -->
+<div class="sheet scheme-04" id="busca">
+  <div class="sheet__inner">
+    <header class="sheet__head">
+      <h2 class="t-h2">Busca do blog</h2>
+      <p>Envia por GET para <code>/blog?q=…</code>. Cada busca tem endereço próprio, e por isso é indexável e compartilhável.</p>
+      <span class="sheet__scheme">Oceano</span>
+    </header>
+
+    <div class="bench">
+      <div class="spec">
+        <span class="spec__label"><b>01</b> Vazia</span>
+        <form class="blh__search" method="get" action="/blog" role="search">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+          <input type="search" placeholder="Buscar por assunto, título ou palavra-chave" value="">
+          <button class="btn btn--primary" type="button"><span class="btn__label">Buscar</span></button>
+        </form>
+      </div>
+      <div class="spec">
+        <span class="spec__label"><b>02</b> Preenchida</span>
+        <p class="spec__note">Ao voltar de um resultado, o campo mantém o termo — a pessoa refina em vez de redigitar.</p>
+        <form class="blh__search" method="get" action="/blog" role="search">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+          <input type="search" value="alto risco">
+          <button class="btn btn--primary" type="button"><span class="btn__label">Buscar</span></button>
+        </form>
+      </div>
+      <div class="spec">
+        <span class="spec__label"><b>03</b> Abas com filtro ativo</span>
+        <p class="spec__note">Aba corrente marcada com <code>aria-current</code>. As abas são as categorias com post publicado, na ordem do painel.</p>
+        <div class="bll__bar" style="position:static">
+          <ul class="bll__tabs">
+            <li><a class="bll__tab" href="/blog">Todos <b>7</b></a></li>
+            <li><a class="bll__tab" href="/blog?categoria=artigos" aria-current="page">Artigos <b>3</b></a></li>
+            <li><a class="bll__tab" href="/blog?categoria=episodios">Episódios <b>2</b></a></li>
+            <li><a class="bll__tab" href="/blog?categoria=materiais">Materiais <b>1</b></a></li>
+            <li><a class="bll__tab" href="/blog?categoria=relatos-de-parto">Relatos de parto <b>1</b></a></li>
+          </ul>
+          <span class="bll__count">3 de 7 posts</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== listas vazias ===== -->
+<div class="sheet scheme-05" id="vazios">
+  <div class="sheet__inner">
+    <header class="sheet__head">
+      <h2 class="t-h2">Listas vazias</h2>
+      <p>Dois vazios diferentes: a busca que não achou nada e o catálogo que ainda não tem item. O primeiro é engano, o segundo é espera — e o texto muda por isso.</p>
+      <span class="sheet__scheme">Sereno</span>
+    </header>
+
+    <div class="bench bench--2">
+      <div class="spec">
+        <span class="spec__label"><b>01</b> Busca sem resultado</span>
+        <div class="bll__empty">
+          <span class="bll__empty-ico"><i class="ph ph-file-dashed" aria-hidden="true"></i></span>
+          <h3 class="t-h3">Nenhum post encontrado</h3>
+          <p>Não achamos nada para <b>&ldquo;amamentação livre demanda&rdquo;</b>. Tente uma palavra mais curta, ou veja tudo que já foi publicado.</p>
+          <div class="bll__empty-acts">
+            <a class="btn btn--primary" href="/blog"><span class="btn__label">Ver todos os posts <i class="ph ph-arrow-right" aria-hidden="true"></i></span></a>
+            <a class="btn btn--outline" href="/contato"><span class="btn__label">Perguntar direto <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
+          </div>
+          <p class="bll__empty-hint">Ver por categoria:
+            <!-- blade: @foreach ($categorias as $c) — as mesmas abas da lista, vindas do painel -->
+            <a href="/blog?categoria=artigos">Artigos</a>
+            <a href="/blog?categoria=episodios">Episódios</a>
+            <a href="/blog?categoria=materiais">Materiais</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="spec">
+        <span class="spec__label"><b>02</b> Catálogo sem item</span>
+        <p class="spec__note">Vale para Livros, E-books, Cursos, Eventos e Materiais — muda só o substantivo.</p>
+        <div class="lvl__empty">
+          <span class="lvl__empty-ico"><i class="ph ph-books" aria-hidden="true"></i></span>
+          <h3 class="t-h3">Em breve novas publicações</h3>
+          <p>Ainda não há livro publicado por aqui. Assine para saber assim que o primeiro sair.</p>
+          <a class="btn btn--primary" href="#newsletter"><span class="btn__label">Quero ser avisada <i class="ph ph-arrow-down" aria-hidden="true"></i></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== paginação ===== -->
+<div class="sheet scheme-05" id="paginacao">
+  <div class="sheet__inner">
+    <header class="sheet__head">
+      <h2 class="t-h2">Paginação</h2>
+      <p>12 itens por página. O filtro corrente viaja junto: <code>?categoria=artigos&amp;pagina=2</code>.</p>
+      <span class="sheet__scheme">Sereno</span>
+    </header>
+
+    <div class="bench">
+      <div class="spec">
+        <span class="spec__label"><b>01</b> Primeira página</span>
+        <p class="spec__note">O "anterior" fica desabilitado em vez de sumir — a barra não muda de largura ao navegar.</p>
+        <ol class="pager" style="justify-content:flex-start">
+          <li><span class="pager__off" aria-disabled="true"><i class="ph ph-caret-left" aria-hidden="true"></i></span></li>
+          <li><a href="#" aria-current="page">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><span class="pager__gap">…</span></li>
+          <li><a href="#">8</a></li>
+          <li><a href="#" aria-label="Próxima página"><i class="ph ph-caret-right" aria-hidden="true"></i></a></li>
+        </ol>
+      </div>
+      <div class="spec">
+        <span class="spec__label"><b>02</b> Página do meio</span>
+        <ol class="pager" style="justify-content:flex-start">
+          <li><a href="#" aria-label="Página anterior"><i class="ph ph-caret-left" aria-hidden="true"></i></a></li>
+          <li><a href="#">1</a></li>
+          <li><span class="pager__gap">…</span></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#" aria-current="page">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><span class="pager__gap">…</span></li>
+          <li><a href="#">8</a></li>
+          <li><a href="#" aria-label="Próxima página"><i class="ph ph-caret-right" aria-hidden="true"></i></a></li>
+        </ol>
+      </div>
+      <div class="spec">
+        <span class="spec__label"><b>03</b> Última página</span>
+        <ol class="pager" style="justify-content:flex-start">
+          <li><a href="#" aria-label="Página anterior"><i class="ph ph-caret-left" aria-hidden="true"></i></a></li>
+          <li><a href="#">1</a></li>
+          <li><span class="pager__gap">…</span></li>
+          <li><a href="#">7</a></li>
+          <li><a href="#" aria-current="page">8</a></li>
+          <li><span class="pager__off" aria-disabled="true"><i class="ph ph-caret-right" aria-hidden="true"></i></span></li>
+        </ol>
+      </div>
+      <div class="spec">
+        <span class="spec__label"><b>04</b> Página única</span>
+        <p class="spec__note">Com um resultado só, a paginação não é renderizada: <code>@if ($itens-&gt;hasPages())</code>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== campos ===== -->
+<div class="sheet scheme-05" id="campos">
+  <div class="sheet__inner">
+    <header class="sheet__head">
+      <h2 class="t-h2">Campos de formulário</h2>
+      <p>Sobre fundo claro, para conferir o contraste da borda e do erro nos dois esquemas.</p>
+      <span class="sheet__scheme">Sereno</span>
+    </header>
+
+    <div class="bench bench--3">
+      <p class="field"><label for="c1">Repouso</label><input id="c1" type="text" placeholder="Digite aqui"></p>
+      <p class="field"><label for="c2">Preenchido</label><input id="c2" type="text" value="Marina Mariz"></p>
+      <p class="field field--erro"><label for="c3">Com erro</label><input id="c3" type="email" value="marina@" aria-invalid="true" aria-describedby="c3-erro">
+        <span class="field__erro" id="c3-erro"><i class="ph ph-warning-circle" aria-hidden="true"></i>Digite um e-mail válido</span>
+      </p>
+    </div>
+    <div class="bench bench--2" style="margin-top:clamp(24px,3vw,40px)">
+      <div class="spec">
+        <span class="spec__label"><b>04</b> Consentimento</span>
+        <p class="spec__note">Nasce desmarcado e é obrigatório para assinar — exigência do escopo, não detalhe de estilo.</p>
+        <label class="bln__consent"><input type="checkbox"><span>Quero receber a newsletter e li a <a href="/politica-de-privacidade">Política de Privacidade</a></span></label>
+      </div>
+      <div class="spec">
+        <span class="spec__label"><b>05</b> Consentimento marcado</span>
+        <label class="bln__consent"><input type="checkbox" checked><span>Quero receber lançamentos e li a <a href="/politica-de-privacidade">Política de Privacidade</a></span></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== botões ===== -->
+<div class="sheet scheme-04" id="botoes">
+  <div class="sheet__inner">
+    <header class="sheet__head">
+      <h2 class="t-h2">Botões</h2>
+      <p>Passe o ponteiro para ver o brilho do primário e o preenchimento do contorno.</p>
+      <span class="sheet__scheme">Oceano</span>
+    </header>
+    <div class="spec__row">
+      <a class="btn btn--primary" href="#botoes"><span class="btn__label">Primário <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
+      <a class="btn btn--outline" href="#botoes"><span class="btn__label">Contorno <i class="ph ph-arrow-right" aria-hidden="true"></i></span></a>
+      <a class="btn btn--glass" href="#botoes"><span class="btn__label">Vidro</span></a>
+      <button class="btn btn--primary" type="button" disabled><span class="btn__label">Enviando…</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="sheet scheme-05">
+  <div class="sheet__inner">
+    <header class="sheet__head">
+      <h2 class="t-h2">Botões sobre Sereno</h2>
+      <p>Os mesmos componentes no esquema claro: o acento vira Violeta 2, que é o que passa em contraste sobre fundo claro.</p>
+      <span class="sheet__scheme">Sereno</span>
+    </header>
+    <div class="spec__row">
+      <a class="btn btn--primary" href="#botoes"><span class="btn__label">Primário <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
+      <a class="btn btn--outline" href="#botoes"><span class="btn__label">Contorno <i class="ph ph-arrow-right" aria-hidden="true"></i></span></a>
+      <button class="btn btn--primary" type="button" disabled><span class="btn__label">Enviando…</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== mensagens ===== -->
+<div class="sheet scheme-05" id="mensagens">
+  <div class="sheet__inner">
+    <header class="sheet__head">
+      <h2 class="t-h2">Mensagens</h2>
+      <p>Nos dois esquemas. Estado nunca é comunicado só por cor: cada mensagem tem ícone e texto próprios.</p>
+      <span class="sheet__scheme">Sereno</span>
+    </header>
+    <div class="bench" style="gap:12px">
+      <p class="bln__msg bln__msg--ok"><i class="ph ph-check-circle" aria-hidden="true"></i>Pronto! Você vai receber as novidades no seu e-mail.</p>
+      <p class="bln__msg bln__msg--dup"><i class="ph ph-info" aria-hidden="true"></i>Você já está na lista. Fique de olho no e-mail.</p>
+      <p class="bln__msg bln__msg--err"><i class="ph ph-warning-circle" aria-hidden="true"></i>Não foi possível enviar agora. Tente novamente em alguns instantes.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sheet scheme-04">
+  <div class="sheet__inner">
+    <header class="sheet__head">
+      <h2 class="t-h2">Mensagens sobre Oceano</h2>
+      <span class="sheet__scheme">Oceano</span>
+    </header>
+    <div class="bench" style="gap:12px">
+      <p class="bln__msg bln__msg--ok"><i class="ph ph-check-circle" aria-hidden="true"></i>Pronto! Você vai receber as novidades no seu e-mail.</p>
+      <p class="bln__msg bln__msg--dup"><i class="ph ph-info" aria-hidden="true"></i>Você já está na lista. Fique de olho no e-mail.</p>
+      <p class="bln__msg bln__msg--err"><i class="ph ph-warning-circle" aria-hidden="true"></i>Não foi possível enviar agora. Tente novamente em alguns instantes.</p>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
