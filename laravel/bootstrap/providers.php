@@ -1,6 +1,13 @@
 <?php
 
+use App\Providers\AppServiceProvider;
+use App\Providers\EducacaoSiteServiceProvider;
+use App\Providers\Filament\AdminPanelProvider;
+use App\Providers\PessoasServiceProvider;
+
 return [
-    App\Providers\AppServiceProvider::class,
-    App\Providers\Filament\AdminPanelProvider::class,
+    AppServiceProvider::class,
+    AdminPanelProvider::class,
+    PessoasServiceProvider::class,
+    EducacaoSiteServiceProvider::class,
 ];

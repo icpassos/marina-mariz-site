@@ -2,15 +2,16 @@
 
 namespace Database\Factories;
 
+use App\Models\Media;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends Factory<\App\Models\Media>
+ * @extends Factory<Media>
  */
 class MediaFactory extends Factory
 {
-    protected $model = \App\Models\Media::class;
+    protected $model = Media::class;
 
     public function definition(): array
     {

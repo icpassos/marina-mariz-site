@@ -12,7 +12,10 @@
   /* --- Abertura: máquina de escrever em loop ------------------------------- */
   const typer = $('.intro__type');
   if (typer) {
-    const lines = JSON.parse(typer.dataset.type);
+    /* No mobile a frase inteira quebraria em duas linhas no meio da digitacao;
+       `data-type-mobile` traz a mesma ideia repartida em trechos de uma linha. */
+    const emMobile = window.matchMedia('(max-width:680px)').matches;
+    const lines = JSON.parse((emMobile && typer.dataset.typeMobile) || typer.dataset.type);
     if (reduced.matches) {
       typer.textContent = lines.join(' ');
     } else {
@@ -125,7 +128,9 @@
       }
     };
 
-    btn?.addEventListener('click', carregar);
+    // O botao e um link para ?pagina=N, para funcionar sem JavaScript.
+    // Com JavaScript, a leva seguinte e anexada em vez de navegar.
+    btn?.addEventListener('click', e => { e.preventDefault(); carregar(); });
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(entradas => {
         if (entradas.some(e => e.isIntersecting)) carregar();
@@ -139,10 +144,18 @@
   if (scenes.length && 'IntersectionObserver' in window) {
     const so = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
+        // Cena mais alta que a janela nunca chega aos 12% de area visivel —
+        // um documento legal de dez telas para em ~10% e ficaria invisivel,
+        // com o texto no HTML e opacidade 0. Para essas, basta entrar em quadro.
+        const maisAltaQueAJanela = entry.target.offsetHeight > window.innerHeight * 0.9;
+
         // entra e sai: a cena reanima toda vez que volta ao quadro
-        entry.target.classList.toggle('is-live', entry.isIntersecting);
+        entry.target.classList.toggle(
+          'is-live',
+          entry.isIntersecting && (maisAltaQueAJanela || entry.intersectionRatio >= 0.12),
+        );
       });
-    }, { threshold: 0.12, rootMargin: '-4% 0px -8% 0px' });
+    }, { threshold: [0, 0.12], rootMargin: '-4% 0px -8% 0px' });
     scenes.forEach(s => so.observe(s));
 
   } else {
@@ -153,7 +166,13 @@
   /* --- Barra fixa: escondida nas duas primeiras cenas e sobre o rodapé ------ */
   const bar = $('.bar');
   let noRodape = false;
-  const jaPassouAsCenas = () => !scenes[1] || scenes[1].getBoundingClientRect().bottom <= 80;
+  /* No desktop a barra so entra depois da segunda cena. No mobile ela aparece
+     ja na primeira rolagem — passou o heroi, aparece. */
+  const barMobile = window.matchMedia('(max-width:680px)');
+  const jaPassouAsCenas = () => {
+    const ref = barMobile.matches ? (scenes[0] || scenes[1]) : scenes[1];
+    return !ref || ref.getBoundingClientRect().bottom <= 80;
+  };
 
   /* --- Menu: some ao descer, volta ao subir -------------------------------- */
   if (nav) {
@@ -342,6 +361,34 @@
       btn.setAttribute('aria-label', antes);
     }, 1800);
   }));
+
+  /* --- Rodape mobile: colunas viram acordeao (<=680px) ---------------------- */
+  /* O layout de 6 colunas do desktop continua intocado; abaixo de 680px o CSS
+     esconde os <ul> e o clique no <h3> abre a coluna. */
+  const footMq = window.matchMedia('(max-width:680px)');
+  const footCols = $$('.footer__col').filter(c => $('h3', c));
+  const footSync = () => footCols.forEach(c => {
+    const h = $('h3', c);
+    if (footMq.matches) {
+      h.tabIndex = 0;
+      h.setAttribute('role', 'button');
+      h.setAttribute('aria-expanded', c.classList.contains('is-open'));
+    } else {
+      h.removeAttribute('tabindex');
+      h.removeAttribute('role');
+      h.removeAttribute('aria-expanded');
+    }
+  });
+  footCols.forEach(c => {
+    const h = $('h3', c);
+    const toggle = () => { c.classList.toggle('is-open'); footSync(); };
+    h.addEventListener('click', toggle);
+    h.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+  footMq.addEventListener('change', footSync);
+  footSync();
 
   /* --- Ano corrente --------------------------------------------------------- */
   const year = $('[data-year]');

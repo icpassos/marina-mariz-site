@@ -56,7 +56,9 @@ A raiz do vault é a pasta-pai `Isabela Passos/` — é lá que fica o `.obsidia
 
 ### Páginas previstas
 
-`Início` · `Sobre` · `Especialidades` · `Amara` · `Podcast Sem Neura` · `Blog` · `Contato` · `Página 404` · `Política de Privacidade` · `Termos de Uso`
+`Início` · `Sobre` · `Especialidades` · `Amara` · `Podcast Sem Neura` · `Blog` · `Contato` · `Página 404` · `Política de Privacidade` · `Termos de Uso` · `Newsletter`
+
+`Newsletter` é página de apoio: o único link para ela é o rodapé, na coluna Conteúdo. Assinar continua acontecendo pelos blocos de inscrição que fecham o Blog e as páginas de Educação.
 
 Em **Educação** (dropdown no menu): `Livros` · `E-books` · `Cursos` · `Eventos` · `Materiais Gratuitos` · `Formação Profissional`
 

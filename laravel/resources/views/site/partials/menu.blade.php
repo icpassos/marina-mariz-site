@@ -1,0 +1,28 @@
+{{-- Menu fixo (vault: Menu.md). Dois modos: o padrao encolhe em pill ao
+     rolar; `data-nav-mode="static"` trava no estado inicial. Nenhuma
+     pagina do site liga o modo estatico hoje. --}}
+<header class="{{ $classeNav ?? 'nav' }}" id="nav"@if ($navEstatico ?? false) data-nav-mode="static"@endif>
+  <div class="nav__inner">
+    <a class="nav__brand" href="/" aria-label="Marina Mariz — página inicial">
+      <svg viewBox="0 0 201.47 32.24" role="img" aria-label="Marina Mariz"><use href="#logo-p"></use></svg>
+    </a>
+    <nav aria-label="Navegação principal">
+      <ul class="nav__links">
+        <li><a class="nav__link" href="/"@if (($atual ?? null) === 'inicio') aria-current="page"@endif>Início</a></li><li><a class="nav__link" href="/sobre"@if (($atual ?? null) === 'sobre') aria-current="page"@endif>Sobre</a></li><li><a class="nav__link" href="/especialidades"@if (($atual ?? null) === 'especialidades') aria-current="page"@endif>Especialidades</a></li><li><a class="nav__link" href="/amara"@if (($atual ?? null) === 'amara') aria-current="page"@endif>Amara</a></li><li><a class="nav__link" href="https://comunidade.dramarinamariz.com.br" target="_blank" rel="noopener">Comunidade</a></li><li><a class="nav__link" href="/podcast"@if (($atual ?? null) === 'podcast') aria-current="page"@endif>Podcast</a></li><li><a class="nav__link" href="/blog"@if (($atual ?? null) === 'blog') aria-current="page"@endif>Blog</a></li><li><a class="nav__link" href="/contato"@if (($atual ?? null) === 'contato') aria-current="page"@endif>Contato</a></li>
+        <li class="nav__dd">
+          <button class="nav__link nav__dd-trigger" type="button" aria-expanded="false" aria-haspopup="true">Educação <i class="ph ph-caret-down" aria-hidden="true"></i></button>
+          <div class="nav__panel"><a class="nav__panel-item" href="/educacao/livros"><i class="ph ph-book-open" aria-hidden="true"></i><span><strong>Livros</strong><span>Publicações autorais</span></span></a><a class="nav__panel-item" href="/educacao/ebooks"><i class="ph ph-file-text" aria-hidden="true"></i><span><strong>E-books</strong><span>Conteúdo digital exclusivo</span></span></a><a class="nav__panel-item" href="/educacao/cursos"><i class="ph ph-graduation-cap" aria-hidden="true"></i><span><strong>Cursos</strong><span>Formação para gestantes</span></span></a><a class="nav__panel-item" href="/educacao/eventos"><i class="ph ph-calendar-blank" aria-hidden="true"></i><span><strong>Eventos</strong><span>Encontros e imersões</span></span></a><a class="nav__panel-item" href="/educacao/materiais-gratuitos"><i class="ph ph-download-simple" aria-hidden="true"></i><span><strong>Materiais gratuitos</strong><span>Guias e checklists</span></span></a><a class="nav__panel-item" href="/educacao/formacao-profissional"><i class="ph ph-medal" aria-hidden="true"></i><span><strong>Formação profissional</strong><span>Para médicos e equipes</span></span></a><a class="nav__panel-all" href="/educacao">Ver tudo em Educação <i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
+        </li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary nav__cta" href="/contato"><span class="btn__label">Agendar <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menu"><span></span></button>
+  </div>
+</header>
+
+<div class="{{ $classeDrawer ?? 'drawer' }}" id="drawer">
+  <div class="shell">
+    <ul class="drawer__list"><li><a class="drawer__link" href="/"@if (($atual ?? null) === 'inicio') aria-current="page"@endif>Início<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li><li><a class="drawer__link" href="/sobre"@if (($atual ?? null) === 'sobre') aria-current="page"@endif>Sobre<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li><li><a class="drawer__link" href="/especialidades"@if (($atual ?? null) === 'especialidades') aria-current="page"@endif>Especialidades<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li><li><a class="drawer__link" href="/amara"@if (($atual ?? null) === 'amara') aria-current="page"@endif>Amara<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li><li><button class="drawer__link drawer__acc" type="button" aria-expanded="false">Educação<i class="ph ph-caret-down" aria-hidden="true"></i></button><div class="drawer__acc-panel"><a href="/educacao/livros">Livros</a><a href="/educacao/ebooks">E-books</a><a href="/educacao/cursos">Cursos</a><a href="/educacao/eventos">Eventos</a><a href="/educacao/materiais-gratuitos">Materiais gratuitos</a><a href="/educacao/formacao-profissional">Formação profissional</a><a href="/educacao">Ver tudo em Educação</a></div></li><li><a class="drawer__link" href="https://comunidade.dramarinamariz.com.br" target="_blank" rel="noopener">Comunidade<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li><li><a class="drawer__link" href="/podcast"@if (($atual ?? null) === 'podcast') aria-current="page"@endif>Podcast<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li><li><a class="drawer__link" href="/blog"@if (($atual ?? null) === 'blog') aria-current="page"@endif>Blog<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li><li><a class="drawer__link" href="/contato"@if (($atual ?? null) === 'contato') aria-current="page"@endif>Contato<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li></ul>
+    <div class="drawer__foot"><a class="btn btn--primary" href="/contato"><span class="btn__label">Agendar <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a></div>
+  </div>
+</div>

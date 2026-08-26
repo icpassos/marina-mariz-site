@@ -1,0 +1,327 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+/* =========================================================================
+   Tema do painel — Dra. Marina Mariz
+   Fonte da verdade: ../../../../../DS_Marina.html
+   Aqui nao se inventa cor nem tamanho: tudo aponta para token do DS.
+   ========================================================================= */
+
+/* --- Tipografia: Mozaic GEO, servida do proprio projeto (sem CDN) --------
+   So .woff2: todo navegador que o Filament 5 suporta le woff2, o .otf de
+   reserva dobraria o peso sem servir a ninguem. */
+@font-face {
+    font-family: 'Mozaic GEO';
+    src: url('../../../fonts/mozaic-400.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Mozaic GEO';
+    src: url('../../../fonts/mozaic-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Mozaic GEO';
+    src: url('../../../fonts/mozaic-600.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Mozaic GEO';
+    src: url('../../../fonts/mozaic-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* --- Camada de tokens do DS ---------------------------------------------
+   Copia literal da paleta e dos esquemas do DS_Marina.html.
+   :root      = .scheme-05 Sereno  (modo claro)
+   :root.dark = .scheme-04 Oceano  (modo escuro)
+   Fica fora de @layer de proposito: o Filament injeta as variaveis de cor
+   num <style> sem layer, e estilo sem layer vence estilo com layer. */
+:root {
+    /* Paleta da marca */
+    --azul-norturno: #1c222e;
+    --azul-norturno-2: #1b2b3f;
+    --azul-norturno-3: #273449;
+    --azul-norturno-4: #3e4c63;
+    --violeta: #b8a3f5;
+    --violeta-2: #5648a8;
+    --violeta-3: #907de2;
+    --violeta-4: #ccc0ff;
+    --serafim: #f3f1e8;
+    --serafim-2: #ccc5a8;
+    --serafim-3: #efe9d3;
+    --serafim-4: #fffcee;
+    --cinza: #ebebeb;
+    --cinza-2: #c4c4c4;
+    --cinza-3: #999999;
+    --cinza-4: #565654;
+    --preto: #0b1423;
+    --branco: #fefefe;
+
+    /* .scheme-05 Sereno — tokens semanticos */
+    --surface-rgb: 243 241 232;
+    --surface-2: #efe9d3;
+    --surface-3-rgb: 204 197 168;
+    --text-rgb: 11 20 35;
+    --text-muted: #565654;
+    --accent-rgb: 86 72 168;
+    --accent-text: #5648a8;
+    --on-accent: #fefefe;
+    --shadow-rgb: 11 20 35;
+    --veil-rgb: 254 254 254;
+    --ok: #1f4a3c;
+    --warn: #5a3a0f;
+    --danger: #6b2229;
+    --logo-text: #0b1423;
+    --logo-mark: #907de2;
+}
+
+:root.dark {
+    /* .scheme-04 Oceano — tokens semanticos */
+    --surface-rgb: 27 43 63;
+    --surface-2: #273449;
+    --surface-3-rgb: 62 76 99;
+    --text-rgb: 235 235 235;
+    --text-muted: #c4c4c4;
+    --accent-rgb: 184 163 245;
+    --accent-text: #b8a3f5;
+    --on-accent: #0b1423;
+    --shadow-rgb: 0 0 0;
+    --veil-rgb: 254 254 254;
+    --ok: #a8e0c6;
+    --warn: #f0c79a;
+    --danger: #f9c6c9;
+    --logo-text: #fefefe;
+    --logo-mark: #ccc0ff;
+}
+
+/* --- Rampa neutra do modo escuro ----------------------------------------
+   O Filament tem uma rampa `gray` so, usada invertida nos dois modos:
+   `text-gray-500` no claro e `dark:text-gray-400` no escuro sao ambos texto
+   atenuado, e nenhum tom unico passa 4.5:1 sobre Sereno e sobre Oceano ao
+   mesmo tempo. Entao a rampa do PHP e a de Sereno e aqui ela e redefinida
+   para Oceano. `:root.dark` tem especificidade maior que o `:root` que o
+   Filament injeta, entao vence independente da ordem. */
+:root.dark {
+    --gray-50: var(--branco);
+    --gray-100: var(--cinza);
+    --gray-200: var(--cinza); /* --text-rgb do Oceano */
+    --gray-300: var(--cinza-2);
+    --gray-400: var(--cinza-2); /* --text-muted do Oceano */
+    --gray-500: var(--cinza-2); /* idem: o DS tem um tom atenuado por esquema */
+    --gray-600: var(--cinza-3);
+    --gray-700: var(--cinza-4);
+    --gray-800: var(--azul-norturno-4); /* --surface-3 */
+    --gray-900: var(--azul-norturno-3); /* --surface-2: cartoes, sidebar */
+    --gray-950: var(--azul-norturno-2); /* --surface: fundo da pagina */
+}
+
+@theme {
+    /* No Filament, `white` e ao mesmo tempo a superficie elevada do modo
+       claro e o texto principal do escuro — que e exatamente o --veil do DS. */
+    --color-white: #fefefe;
+
+    /* Escala tipografica do DS. Nenhum tamanho literal: cada degrau do
+       Tailwind aponta para o token correspondente. */
+    --text-xs: var(--caption);
+    --text-sm: var(--body-sm);
+    --text-base: var(--body);
+    --text-lg: var(--body-lg);
+    --text-xl: var(--h4);
+    --text-xl--line-height: var(--lh-h4);
+    --text-2xl: var(--h3);
+    --text-2xl--line-height: var(--lh-h3);
+    --text-3xl: var(--h2);
+    --text-3xl--line-height: var(--lh-h2);
+    --text-4xl: var(--h1);
+    --text-4xl--line-height: var(--lh-h1);
+}
+
+/* Tokens da escala do DS. Ficam no :root porque o @theme acima os consome
+   em tempo de uso (var()), nao em tempo de compilacao. */
+:root {
+    --h1: clamp(2.5rem, 4.5vw, 4rem);
+    --h2: 2.25rem;
+    --h3: 1.65rem;
+    --h4: 1.25rem;
+    --h5: 1.05rem;
+    --h6: 0.9rem;
+    --lh-h1: 0.92;
+    --lh-h2: 1;
+    --lh-h3: 1.1;
+    --lh-h4: 1.2;
+    --lh-h5: 1.3;
+    --lh-h6: 1.35;
+    --eyebrow: 0.72rem;
+    --body-lg: 1.25rem;
+    --body: 1rem;
+    --body-sm: 0.875rem;
+    --caption: 0.75rem;
+}
+
+/* --- Contorno de controle: WCAG 1.4.11 ----------------------------------
+   O Filament desenha a borda de campo com `ring-gray-950/10` (claro) e
+   `ring-white/20` (escuro) — ~1.2:1 e ~2:1, abaixo dos 3:1 exigidos para o
+   que identifica um controle. O DS resolve borda com `rgb(var(--text-rgb)/.3)`,
+   que tambem nao chega la (~2:1). Aqui o contorno passa a ser --text-muted,
+   que e token do DS e mede 7.29:1 no Sereno e 7.19:1 no Oceano.
+   `:not(.fi-invalid)` preserva o anel de erro; foco e `.fi-color` tem
+   especificidade maior e continuam mandando. */
+.fi-input-wrp:not(.fi-invalid),
+.fi-btn.fi-outlined:not(.fi-color),
+input[type='checkbox'].fi-checkbox-input:not(.fi-invalid),
+input[type='radio'].fi-radio-input:not(.fi-invalid) {
+    --tw-ring-color: var(--text-muted);
+}
+
+/* Trilho do toggle desligado: --surface-3 sozinho da 1.72:1 contra o cartao.
+   O toggle ja nasce com `border-2 border-transparent`, entao basta pintar essa
+   borda de --text-muted — 7.29:1 no claro, 7.19:1 no escuro — sem mexer no
+   box-shadow, que e onde vive o anel de foco. O estado continua sendo lido
+   pela posicao e pelo icone do botao, nunca so pela cor. */
+.fi-toggle:not(.fi-toggle-on) {
+    border-color: var(--text-muted);
+}
+
+/* --- Logotipo -----------------------------------------------------------
+   LOGO-P (simbolo + nome em linha unica), colorido pelo esquema via
+   --logo-text/--logo-mark, como manda o DS. */
+.fi-logo svg {
+    height: 100%;
+    width: auto;
+}
+
+/* --- Wireframe do WordPress ---------------------------------------------
+   O visual continua o do DS; o que muda aqui e so a grade.
+
+   1. Menu estreito (12rem, definido no painel). O Filament corta o rotulo
+   com `truncate`; num menu estreito isso apagaria "Categorias do blog".
+   Aqui o rotulo quebra em duas linhas em vez de sumir, e o respiro lateral
+   encolhe para sobrar largura para o texto. */
+.fi-sidebar-item-label {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: break-word;
+    line-height: 1.25;
+}
+
+.fi-sidebar-nav {
+    padding-inline: 0.75rem;
+}
+
+/* 2. Tela de edicao em duas colunas, a marca do WP: conteudo a esquerda
+   ocupando o que sobrar, caixas de apoio numa faixa fixa de 17.5rem (280px)
+   a direita. Abaixo de 64rem a grade do Filament ja e de uma coluna e a
+   faixa empilha sozinha embaixo — nao ha o que fazer aqui.
+   Precisa ser CSS: a grade do Filament so sabe fracoes iguais. */
+@media (min-width: 64rem) {
+    .fi-sc.fi-grid.fi-wp-edicao {
+        grid-template-columns: minmax(0, 1fr) 17.5rem;
+        align-items: start;
+    }
+}
+
+/* 3. Subtitulo de pagina. O Filament da `text-lg` (--body-lg, 1.25rem) as
+   linhas que explicam a secao, e elas disputavam atencao com o titulo.
+   1rem e exatamente 80% disso e e o token --body do DS. Nao usamos --body-sm
+   porque esse ja e o tamanho da descricao de secao: os dois niveis de apoio
+   empatariam. */
+.fi-header-subheading {
+    font-size: var(--body);
+    line-height: 1.5;
+}
+
+/* 4. Menu lateral rola sem barra a vista. `overflow-y: auto` continua de pe,
+   entao roda do mouse, teclado e o scroll automatico do foco seguem
+   alcancando os itens de baixo; some so o desenho da barra. Sem a barra nao
+   ha o que reservar, entao o `scrollbar-gutter: stable` do Filament sai. */
+.fi-sidebar-nav {
+    scrollbar-width: none;
+    scrollbar-gutter: auto;
+}
+
+.fi-sidebar-nav::-webkit-scrollbar {
+    display: none;
+}
+
+/* 5. Campo de conteudo. O `min-h-12` do Filament abre o editor rico com a
+   barra de ferramentas e uma linha. Cinco vezes isso e o minimo para
+   escrever um post ou um texto legal sem rolar desde a primeira frase.
+   Dois seletores para empatar a especificidade da regra do Filament. */
+.fi-fo-rich-editor .fi-fo-rich-editor-content {
+    min-height: 15rem;
+}
+
+/* 6. Acoes no topo da coluna da direita. A faixa tem 17.5rem: tres botoes
+   lado a lado espremem o rotulo ate quebrar em tres linhas ("Salvar / e
+   criar / outro"). Empilhados e em largura total, cada rotulo cabe numa
+   linha so e a area de toque cresce. */
+/* Quem alinha os botoes e o `.fi-ac` de dentro, nao o bloco de fora.
+   Cobre flex e grade porque o Filament usa os dois conforme a variante. */
+.acoes-empilhadas .fi-ac {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.acoes-empilhadas .fi-ac > .fi-btn,
+.acoes-empilhadas .fi-ac .fi-ac-btn-action {
+    width: 100%;
+    justify-content: center;
+}
+
+/* 7. Saudacao no topo, ao lado do menu. Texto de apoio: identifica quem
+   esta logado sem competir com o titulo da pagina. */
+.fi-topbar-bem-vindo {
+    font-size: var(--body-sm);
+    color: var(--text-muted);
+    white-space: nowrap;
+    /* Sem isto encosta no avatar do menu de conta, vizinho imediato no
+       `TOPBAR_END`. */
+    margin-inline-start: 0.75rem;
+}
+
+/* 8. Largura total na grade da tela inicial. Widget com view propria nao
+   ganha a celula `.fi-grid-col` que o Filament usa para aplicar o
+   `columnSpan`: a raiz da view e ela mesma o filho da grade. Entao quem
+   atravessa as colunas e a propria secao. */
+.cartao-largura-total {
+    grid-column: 1 / -1;
+}
+
+/* 9. Menu no topo. A estrutura ja e a do site — uma faixa fixa com um
+   painel por grupo —, aqui ele ganha a forma do DS: cantos do `.card`,
+   contorno de acento e um respiro que faz o painel ler como menu grande,
+   e nao como lista de contexto. */
+.fi-topbar-nav-groups .fi-dropdown-panel {
+    min-width: 15rem;
+    border-radius: 1.25rem;
+    padding: 0.5rem;
+    box-shadow: 0 18px 50px rgb(var(--shadow-rgb) / 0.16);
+    --tw-ring-color: rgb(var(--accent-rgb) / 0.28);
+}
+
+.fi-topbar-nav-groups .fi-dropdown-list-item {
+    border-radius: 0.875rem;
+    padding-block: 0.625rem;
+}
+
+/* O rotulo do grupo aberto continua legivel: sem isto ele some no hover
+   junto com o do item. */
+.fi-topbar-item-btn {
+    border-radius: 999px;
+}
+
+

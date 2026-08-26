@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\Media\Tables;
 
+use App\Filament\Resources\Media\Actions\AcoesDeMidia;
 use App\Models\Media;
-use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -77,7 +77,8 @@ class MediaTable
             ])
             ->recordActions([
                 EditAction::make(),
-                DeleteAction::make(),
+                AcoesDeMidia::substituir(),
+                AcoesDeMidia::excluir(),
             ]);
     }
 

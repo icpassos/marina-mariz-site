@@ -7,8 +7,8 @@
       "n": 1,
       "origem": "Dra. Marina Mariz 1.png",
       "arquivos": [
-        "hero-acolhimento.jpg",
-        "amara/1.jpg"
+        "hero-acolhimento.webp",
+        "amara/1.webp"
       ],
       "desc": "Marina apoiando uma gestante de pé, testa com testa"
     },
@@ -22,7 +22,7 @@
       "n": 3,
       "origem": "Dra. Marina Mariz 3.png",
       "arquivos": [
-        "cirurgia.jpg"
+        "cirurgia.webp"
       ],
       "desc": "Centro cirúrgico, duas profissionais em procedimento"
     },
@@ -36,7 +36,7 @@
       "n": 5,
       "origem": "Dra. Marina Mariz 5.jpg",
       "arquivos": [
-        "planejamento.jpg"
+        "planejamento.webp"
       ],
       "desc": "Marina sentada em ambiente claro, fora do hospital"
     },
@@ -44,7 +44,7 @@
       "n": 6,
       "origem": "Dra. Marina Mariz 6.jpg",
       "arquivos": [
-        "marina-sobre.jpg"
+        "marina-sobre.webp"
       ],
       "desc": "Retrato de Marina no consultório, blusa preta"
     },
@@ -52,7 +52,7 @@
       "n": 7,
       "origem": "Dra. Marina Mariz 7.jpg",
       "arquivos": [
-        "consultorio.jpg"
+        "consultorio.webp"
       ],
       "desc": "Marina em poltrona, espelho iluminado ao fundo"
     },
@@ -66,7 +66,7 @@
       "n": 9,
       "origem": "Dra. Marina Mariz 9.png",
       "arquivos": [
-        "amara/9.jpg"
+        "amara/9.webp"
       ],
       "desc": "Quatro profissionais de touca, close, sorrindo"
     },
@@ -74,7 +74,7 @@
       "n": 10,
       "origem": "Dra. Marina Mariz 10.jpg",
       "arquivos": [
-        "amara/10.jpg"
+        "amara/10.webp"
       ],
       "desc": "Equipe entregando o recém-nascido ao casal"
     },
@@ -88,8 +88,8 @@
       "n": 12,
       "origem": "Dra. Marina Mariz 12.jpg",
       "arquivos": [
-        "familia.jpg",
-        "amara/12.jpg"
+        "familia.webp",
+        "amara/12.webp"
       ],
       "desc": "Casal, bebê e duas profissionais no quarto"
     },
@@ -109,8 +109,8 @@
       "n": 15,
       "origem": "Dra. Marina Mariz 15.jpg",
       "arquivos": [
-        "abraco.jpg",
-        "amara/15.jpg"
+        "abraco.webp",
+        "amara/15.webp"
       ],
       "desc": "Abraço durante o trabalho de parto, apoio em pé"
     },
@@ -118,7 +118,7 @@
       "n": 16,
       "origem": "Dra. Marina Mariz 16.jpeg",
       "arquivos": [
-        "maos.jpg"
+        "maos.webp"
       ],
       "desc": "Mãozinha de recém-nascido segurando um dedo"
     },
@@ -126,8 +126,8 @@
       "n": 17,
       "origem": "Dra. Marina Mariz 17.jpeg",
       "arquivos": [
-        "comunidade.jpg",
-        "amara/17.jpg"
+        "comunidade.webp",
+        "amara/17.webp"
       ],
       "desc": "Três mulheres deitadas com o bebê na cama"
     },
@@ -141,8 +141,8 @@
       "n": 19,
       "origem": "Dra. Marina Mariz 19.jpg",
       "arquivos": [
-        "saude-da-mulher.jpg",
-        "amara/19.jpg"
+        "saude-da-mulher.webp",
+        "amara/19.webp"
       ],
       "desc": "Quatro mulheres em pé, ambiente claro com plantas"
     },
@@ -150,8 +150,8 @@
       "n": 20,
       "origem": "Dra. Marina Mariz 20.jpeg",
       "arquivos": [
-        "pos-parto.jpg",
-        "amara/20.jpg"
+        "pos-parto.webp",
+        "amara/20.webp"
       ],
       "desc": "Cinco pessoas com o bebê no quarto da maternidade"
     },
@@ -247,7 +247,7 @@
       "n": 32,
       "origem": "Pexels — 7540301 (Pexels License)",
       "arquivos": [
-        "ebooks-leitura-digital.jpg"
+        "ebooks-leitura-digital.webp"
       ],
       "desc": "Mulher lendo em leitor digital deitada na cama, manta bege"
     },
@@ -255,7 +255,7 @@
       "n": 33,
       "origem": "Pexels — 5857831 (Pexels License)",
       "arquivos": [
-        "ebooks-gestante-leitura.jpg"
+        "ebooks-gestante-leitura.webp"
       ],
       "desc": "Gestante lendo livro sentada junto à janela, plantas ao fundo"
     },
@@ -263,7 +263,7 @@
       "n": 34,
       "origem": "Pexels — 27177487 (Pexels License)",
       "arquivos": [
-        "ebooks-tablet.jpg"
+        "ebooks-tablet.webp"
       ],
       "desc": "Mulher de camisa branca lendo em tablet, luz natural"
     },
@@ -271,7 +271,7 @@
       "n": 35,
       "origem": "Pexels — 7623615 (Pexels License)",
       "arquivos": [
-        "materiais-anotacoes.jpg"
+        "materiais-anotacoes.webp"
       ],
       "desc": "Mulher anotando em caderno em casa, xícara de chá ao lado"
     },
@@ -279,7 +279,7 @@
       "n": 36,
       "origem": "Pexels — 8554159 (Pexels License)",
       "arquivos": [
-        "materiais-checklist.jpg"
+        "materiais-checklist.webp"
       ],
       "desc": "Mãos preenchendo checklist em caderno com post-its na mesa"
     },
@@ -287,7 +287,7 @@
       "n": 37,
       "origem": "Pexels — 7484911 (Pexels License)",
       "arquivos": [
-        "materiais-gestante-celular.jpg"
+        "materiais-gestante-celular.webp"
       ],
       "desc": "Gestante sentada no sofá lendo no celular, notebook ao lado"
     },

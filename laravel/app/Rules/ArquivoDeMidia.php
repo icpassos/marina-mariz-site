@@ -19,6 +19,13 @@ class ArquivoDeMidia implements ValidationRule
     public const TAMANHO_MAXIMO = 50 * 1024 * 1024;
 
     /**
+     * Imagem entra em qualquer formato que o servidor consiga abrir — JPEG,
+     * PNG, WebP, GIF, BMP, AVIF. O seletor do navegador usa este curinga e a
+     * conferencia real e feita abrindo o arquivo, nao lendo o rotulo dele.
+     */
+    public const IMAGENS = ['image/*'];
+
+    /**
      * Extensao declarada => tipos que o conteudo pode ter de verdade.
      * As duas coisas precisam bater: so olhar o conteudo deixaria um .txt
      * entrar como .pdf, e so olhar a extensao nao verifica nada.
@@ -34,6 +41,9 @@ class ArquivoDeMidia implements ValidationRule
         'm4a' => ['audio/mp4', 'audio/x-m4a', 'video/mp4'],
         'wav' => ['audio/wav', 'audio/x-wav'],
     ];
+
+    /** @param  array<int, string>  $extensoes  restringe o campo; vazio aceita imagem e qualquer tipo da lista */
+    public function __construct(private array $extensoes = []) {}
 
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
@@ -66,7 +76,10 @@ class ArquivoDeMidia implements ValidationRule
         $tipo = (new \finfo(FILEINFO_MIME_TYPE))->file($caminho) ?: '';
 
         if (str_starts_with($tipo, 'image/')) {
-            $this->validarImagem($caminho, $tipo, $fail);
+            // Campo de arquivo não é campo de imagem, e vice-versa.
+            $this->extensoes === []
+                ? $this->validarImagem($caminho, $tipo, $fail)
+                : $fail('Este campo espera um arquivo '.$this->lista().', não uma imagem.');
 
             return;
         }
@@ -74,8 +87,13 @@ class ArquivoDeMidia implements ValidationRule
         $extensao = strtolower($arquivo->getClientOriginalExtension());
         $esperados = self::TIPOS_DE_ARQUIVO[$extensao] ?? null;
 
-        if ($esperados === null) {
-            $fail('Tipo de arquivo não aceito.');
+        $aceita = $esperados !== null
+            && ($this->extensoes === [] || in_array($extensao, $this->extensoes, strict: true));
+
+        if (! $aceita) {
+            $fail($this->extensoes === []
+                ? 'Tipo de arquivo não aceito.'
+                : 'Escolha um arquivo '.$this->lista().'.');
 
             return;
         }
@@ -85,30 +103,29 @@ class ArquivoDeMidia implements ValidationRule
         }
     }
 
+    private function lista(): string
+    {
+        return '.'.implode(', .', $this->extensoes);
+    }
+
     private function validarImagem(string $caminho, string $tipo, Closure $fail): void
     {
-        if ($tipo !== 'image/webp') {
-            $fail('A imagem precisa chegar convertida em WebP. Envie JPEG, PNG ou WebP por um navegador atualizado — a conversão acontece nele.');
-
-            return;
-        }
-
+        // Qualquer imagem que o servidor consiga abrir serve: quem converte
+        // para WebP e reduz para 1920px e `Media::guardar()`. Depender do
+        // navegador para converter recusava foto de celular sem motivo.
         $dimensoes = @getimagesize($caminho);
 
         if ($dimensoes === false) {
-            $fail('A imagem está corrompida ou não pôde ser lida.');
+            $fail('Não foi possível abrir esta imagem. Formatos aceitos: JPEG, PNG, WebP, GIF, BMP e AVIF'
+                .' — HEIC do iPhone não abre aqui; exporte como JPEG antes de enviar.');
 
             return;
         }
 
         [$largura, $altura] = $dimensoes;
 
-        if ($largura > self::LARGURA_MAXIMA) {
-            $fail("A imagem tem {$largura}px de largura; o máximo é ".self::LARGURA_MAXIMA.'px.');
-
-            return;
-        }
-
+        // Largura grande e resolvida na conversao; area gigante nao, porque
+        // e ela que estoura a memoria do GD antes de qualquer redimensionar.
         if ($largura * $altura > self::PIXELS_MAXIMOS) {
             $fail('A imagem passa de 30 milhões de pixels.');
         }
