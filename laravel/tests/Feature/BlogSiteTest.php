@@ -26,6 +26,49 @@ class BlogSiteTest extends TestCase
 
     // ── lista ────────────────────────────────────────────────────────
 
+    // ── cena do blog na home ─────────────────────────────────────────
+
+    public function test_a_home_lista_os_seis_posts_mais_novos_e_leva_a_cada_um(): void
+    {
+        foreach (range(1, 8) as $n) {
+            Post::factory()->publicado()->create([
+                'title' => "No ar {$n}",
+                'slug' => "no-ar-{$n}",
+                'published_at' => now()->subDays(30 - $n),
+            ]);
+        }
+
+        Post::factory()->create(['title' => 'Rascunho fora da home']);
+        Post::factory()->agendado()->create(['title' => 'Agendado fora da home']);
+
+        $home = $this->get('/');
+        $home->assertOk();
+
+        // Seis linhas, do mais novo para o mais antigo.
+        $this->assertSame(6, substr_count($home->getContent(), 'class="blog__row rise"'));
+        $home->assertSee('No ar 8', false);
+        $home->assertSee('No ar 3', false);
+        $home->assertDontSee('>No ar 2<', false);
+
+        // Cada linha aponta para o post, em aba nova.
+        $home->assertSee('<a href="'.url('/blog/no-ar-8').'" target="_blank" rel="noopener">', false);
+
+        foreach (['Rascunho fora da home', 'Agendado fora da home'] as $fora) {
+            $home->assertDontSee($fora, false);
+        }
+    }
+
+    public function test_sem_post_no_ar_a_home_nao_mostra_a_lista(): void
+    {
+        Post::factory()->create(['title' => 'So rascunho']);
+
+        $home = $this->get('/');
+        $home->assertOk();
+        $home->assertDontSee('class="blog__list"', false);
+        // A cena continua no ar, com os botoes de saida.
+        $home->assertSee('Ir para o Blog', false);
+    }
+
     public function test_a_lista_traz_so_o_que_esta_no_ar_doze_por_pagina(): void
     {
         // Publicados com datas distintas, do mais novo para o mais antigo.

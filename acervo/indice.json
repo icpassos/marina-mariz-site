@@ -1,7 +1,7 @@
 {
   "_leia": "Numeração estável do acervo. O número de uma foto nunca muda: novas fotos entram no fim, com o próximo número livre. Rode acervo/gerar.py depois de editar este arquivo.",
   "origem": "~/Downloads/Assets Marina Site Institucional",
-  "proximo_numero": 41,
+  "proximo_numero": 57,
   "fotos": [
     {
       "n": 1,
@@ -314,6 +314,135 @@
         "formacao-consulta.webp"
       ],
       "desc": "Médico anotando durante consulta, paciente de costas"
+    },
+    {
+      "n": 41,
+      "origem": "Comentários de aprovação Afina 09/09/2026 — imagem-006.webp",
+      "arquivos": [
+        "imagem-006.webp"
+      ],
+      "desc": "Dra. Marina Mariz sorrindo com um recém-nascido no colo, na sala de parto"
+    },
+    {
+      "n": 42,
+      "origem": "Comentários de aprovação Afina 09/09/2026 — imagem-007.webp",
+      "arquivos": [
+        "imagem-007.webp"
+      ],
+      "desc": "Mulher em trabalho de parto amparada de perto por profissional de máscara"
+    },
+    {
+      "n": 43,
+      "origem": "Comentários de aprovação Afina 09/09/2026 — imagem-008.webp",
+      "arquivos": [
+        "imagem-008.webp",
+        "imagem-011.webp"
+      ],
+      "desc": "As quatro obstetras da Amara reunidas e sorrindo no consultório"
+    },
+    {
+      "n": 44,
+      "origem": "Comentários de aprovação Afina 09/09/2026 — imagem-009.webp",
+      "arquivos": [
+        "imagem-009.webp"
+      ],
+      "desc": "Dra. Marina Mariz operando no centro cirúrgico"
+    },
+    {
+      "n": 45,
+      "origem": "Comentários de aprovação Afina 10/09/2026 — imagem-010.webp",
+      "arquivos": [
+        "imagem-010.webp"
+      ],
+      "desc": "Dra. Marina Mariz sorrindo à mesa do consultório, janela ao fundo"
+    },
+    {
+      "n": 46,
+      "origem": "Comentários de aprovação Afina 10/09/2026 — imagem-012.webp",
+      "arquivos": [
+        "imagem-012.webp"
+      ],
+      "desc": "Dra. Marina Mariz com uma mãe e o bebê no colo, na recepção"
+    },
+    {
+      "n": 47,
+      "origem": "Comentários de aprovação Afina 10/09/2026 — imagem-013.webp",
+      "arquivos": [
+        "imagem-013.webp"
+      ],
+      "desc": "Recém-nascido recolhido pela equipe no centro cirúrgico"
+    },
+    {
+      "n": 48,
+      "origem": "Comentários de aprovação Afina 10/09/2026 — imagem-014.webp",
+      "arquivos": [
+        "imagem-014.webp"
+      ],
+      "desc": "Dra. Marina Mariz com um recém-nascido no colo, na sala de parto"
+    },
+    {
+      "n": 49,
+      "origem": "Pasta \"pagina sobre marina\" — carrossel da Travessia (10/09/2026)",
+      "arquivos": [
+        "travessia-01.webp"
+      ],
+      "desc": "Dra. Marina Mariz grávida, sentada em casa"
+    },
+    {
+      "n": 50,
+      "origem": "Pasta \"pagina sobre marina\" — carrossel da Travessia (10/09/2026)",
+      "arquivos": [
+        "travessia-02.webp"
+      ],
+      "desc": "Dois bebês gêmeos deitados lado a lado, sorrindo"
+    },
+    {
+      "n": 51,
+      "origem": "Pasta \"pagina sobre marina\" — carrossel da Travessia (10/09/2026)",
+      "arquivos": [
+        "travessia-03.webp"
+      ],
+      "desc": "Mulher abraçada a um menino e uma menina no sofá"
+    },
+    {
+      "n": 52,
+      "origem": "Pasta \"pagina sobre marina\" — carrossel da Travessia (10/09/2026)",
+      "arquivos": [
+        "travessia-05.webp"
+      ],
+      "desc": "Dra. Marina Mariz agachada no corredor da maternidade, de escrubs"
+    },
+    {
+      "n": 53,
+      "origem": "Pasta \"pagina sobre marina\" — carrossel da Travessia (10/09/2026)",
+      "arquivos": [
+        "travessia-06.webp"
+      ],
+      "desc": "Dra. Marina Mariz ao lado de puérpera com o bebê no colo"
+    },
+    {
+      "n": 54,
+      "origem": "Pasta \"pagina sobre marina\" — carrossel da Travessia (10/09/2026)",
+      "arquivos": [
+        "travessia-07.webp"
+      ],
+      "desc": "Duas mulheres segurando um recém-nascido no quarto"
+    },
+    {
+      "n": 55,
+      "origem": "Pasta \"pagina sobre marina\" — carrossel da Travessia (10/09/2026)",
+      "arquivos": [
+        "travessia-08.webp"
+      ],
+      "desc": "Equipe e família reunidas em volta de um recém-nascido"
+    },
+    {
+      "n": 56,
+      "origem": "Pasta \"pagina sobre marina\" — carrossel da Travessia (10/09/2026)",
+      "arquivos": [
+        "travessia-09.webp"
+      ],
+      "desc": "Dra. Marina Mariz em pé no consultório, com pasta da Amara"
     }
   ]
 }

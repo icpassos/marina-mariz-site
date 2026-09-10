@@ -19,7 +19,7 @@
 <section class="scene pod pod-noite pdb pod-luz" id="fases" data-glow data-scene data-tone="dark" aria-labelledby="fases-titulo">
   <div class="scene__body">
     <img class="pdb__logo rise" src="assets/logo/podcast-sem-neura-noite.svg" alt="Sem Neura Podcast" width="172" height="64">
-    <h1 class="pdb__claim rise" data-d="1" id="fases-titulo" aria-label="Chega de neura na gestação"><span class="pdb__ghost" aria-hidden="true">Chega de neura na gestação</span><span class="intro__type" data-type='["Chega de neura na gestação"]' aria-hidden="true"></span></h1>
+    <h1 class="pdb__claim rise" data-d="1" id="fases-titulo" aria-label="Chega de neura na gestação e na maternidade"><span class="pdb__ghost" aria-hidden="true">Chega de neura na maternidade</span><span class="intro__type" data-type='["Chega de neura na gestação","Chega de neura na maternidade"]' aria-hidden="true"></span></h1>
   </div>
 </section>
 
@@ -34,10 +34,10 @@
         <li>Carol Flores</li>
       </ul>
       <h2 class="t-h1 rise" data-d="1" data-split id="pod-titulo">Uma conversa honesta<br>sobre gestar e maternar</h2>
-      <p class="rise" data-d="2">Os medos. As dúvidas. As decisões difíceis.</p>
-      <p class="rise" data-d="3">E também a beleza e as alegrias das tantas fases do maternar.</p>
-      <p class="rise" data-d="3">Um espaço de <strong>conversa</strong>, <strong>informação</strong> e <strong>acolhimento</strong> para quem está tentando engravidar, gestando ou vivendo o puerpério.</p>
-      <p class="rise" data-d="3">Juntas para conversar sobre o que as mulheres vivem na gestação e na maternidade. Ginecologistas e obstetras, também mães — trazendo <strong>ciência com clareza</strong>, com <strong>acolhimento</strong> e, claro, <strong>sem neura</strong>.</p>
+      <p class="rise" data-d="2">Nem tudo é medo e culpa. Nem tudo é alegria e encanto.</p>
+      <p class="rise" data-d="3">Maternar é viver os dois extremos, e tudo o que existe entre eles.</p>
+      <p class="rise" data-d="3">Um espaço para falar sobre <strong>escolhas, medos, expectativas, mudanças e <br class="br-desk">descobertas</strong>, da tentativa de engravidar ao puerpério.</p>
+      <p class="rise" data-d="3">Duas obstetras, duas mães, convidados, especialistas e muitas conversas sobre <br class="br-desk">maternidade com <strong>ciência</strong>, <strong>clareza</strong>, <strong>acolhimento</strong> e, claro, <strong>sem neura</strong>.</p>
       <div class="pdh__links rise" data-d="4">
         <span class="pdh__cue">Ouça agora:</span>
         <a class="btn btn--primary" href="https://www.instagram.com/semneurapodcast" target="_blank" rel="noopener"><span class="btn__label"><i class="ph ph-instagram-logo" aria-hidden="true"></i> @semneurapodcast</span></a>
@@ -67,19 +67,21 @@
     <div class="pds__grid">
       <h2 class="t-h2 rise" id="sobre-titulo">O que é o Sem Neura Podcast</h2>
       <div class="pds__text">
-        <p class="rise" data-d="1">Um espaço dedicado à <strong>maternidade real</strong>, à informação de qualidade e ao cuidado com a saúde da mulher.</p>
-        <p class="rise" data-d="2">Apresentado pela Dra. Marina Mariz e pela Dra. Carol Flores, ginecologistas e obstetras, também mães, o podcast aborda gravidez, parto, puerpério, amamentação e maternidade de forma <strong>humanizada, acessível e baseada em evidências</strong>. Em cada episódio, compartilhamos experiências, orientações e conversas honestas para ajudar mulheres a viverem essa jornada com mais <strong>segurança</strong>, <strong>consciência</strong> e, claro, sem neura.</p>
+        <p class="rise" data-d="1">Um espaço para falar sobre a <strong>maternidade como ela realmente é</strong>: com dúvidas, escolhas, mudanças, alegrias e tudo o que existe entre uma fase e outra.</p>
+        <p class="rise" data-d="2">Apresentado pela Dra. Marina Mariz e pela Dra. Carol Flores (ginecologistas, obstetras e mães), o Sem Neura reúne <strong>ciência, experiência e conversas honestas</strong> sobre fertilidade, gestação, parto, puerpério, amamentação e saúde da mulher. Aqui, informação de qualidade não vem para dizer como você deve viver essa experiência. Vem para ajudar você a <strong>entender possibilidades, fazer escolhas</strong> e atravessar cada etapa com mais <strong>clareza e segurança</strong>.</p>
       </div>
     </div>
 
-    <ol class="pds__fases rise" data-d="3">
+    <h3 class="pds__tag pds__tag--topo rise" data-d="3">Em que fase você está?</h3>
+    <ol class="pds__fases rise" data-d="4">
       <li class="pds__fase"><i class="ph ph-seal-check" aria-hidden="true"></i><strong>Tentando engravidar</strong><span>Fase 01</span></li>
-      <li class="pds__fase"><i class="ph ph-baby" aria-hidden="true"></i><strong>Gestando</strong><span>Fase 02</span></li>
-      <li class="pds__fase"><i class="ph ph-hand-heart" aria-hidden="true"></i><strong>Parindo</strong><span>Fase 03</span></li>
-      <li class="pds__fase"><i class="ph ph-moon-stars" aria-hidden="true"></i><strong>Maternando</strong><span>Fase 04</span></li>
+      <li class="pds__fase"><i class="ph ph-baby" aria-hidden="true"></i><strong>Primeira gestação</strong><span>Fase 02</span></li>
+      <li class="pds__fase"><i class="ph ph-users" aria-hidden="true"></i><strong>Segunda gestação ou mais</strong><span>Fase 03</span></li>
+      <li class="pds__fase"><i class="ph ph-clock-countdown" aria-hidden="true"></i><strong>Me preparando para o parto</strong><span>Fase 04</span></li>
+      <li class="pds__fase"><i class="ph ph-hand-heart" aria-hidden="true"></i><strong>Vivendo o pós-parto</strong><span>Fase 05</span></li>
     </ol>
 
-    <p class="pds__tag rise" data-d="4">Estamos com você em todas as fases</p>
+    <p class="pds__tag rise" data-d="5">Estamos com você em todas as fases</p>
   </div>
 </section>
 

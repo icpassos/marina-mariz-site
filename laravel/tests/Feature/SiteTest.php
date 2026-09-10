@@ -79,6 +79,10 @@ class SiteTest extends TestCase
             '<address class="footer__addr">R. Cláudio Manoel, 48<br>Sala 1201 — Funcionários<br>Belo Horizonte&nbsp;-&nbsp;MG</address>',
             false
         );
+        // Os dois botoes de rota saem do mesmo endereco (comentario 071).
+        $destino = 'R.+Cl%C3%A1udio+Manoel%2C+48%2C+Sala+1201+%E2%80%94+Funcion%C3%A1rios%2C+Belo+Horizonte+-+MG';
+        $resposta->assertSee('href="https://www.google.com/maps/dir/?api=1&amp;destination='.$destino.'"', false);
+        $resposta->assertSee('href="https://waze.com/ul?q='.$destino.'&amp;navigate=yes"', false);
         $resposta->assertSee(
             '<p class="footer__crm"><b>Dra. Marina Mariz — CRM-MG 48.386</b> · Ginecologia e Obstetrícia — RQE 30.992 · Medicina Fetal — RQE 30.993</p>',
             false

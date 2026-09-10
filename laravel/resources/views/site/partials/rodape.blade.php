@@ -8,6 +8,11 @@
     $redes = collect(['youtube', 'instagram', 'linkedin', 'spotify', 'whatsapp'])
         ->mapWithKeys(fn (string $chave): array => [$chave => $visiveis[$chave] ?? null])
         ->filter();
+    // Botoes de rota (comentario 071). O destino e o proprio endereco do
+    // painel, entao trocar o endereco la troca os dois links aqui.
+    $destino = urlencode(implode(', ', \App\Services\Site::enderecoLinhas()));
+    $rotaMaps = 'https://www.google.com/maps/dir/?api=1&destination='.$destino;
+    $rotaWaze = 'https://waze.com/ul?q='.$destino.'&navigate=yes';
     // O endereco nao quebra entre cidade e estado.
     $endereco = collect(\App\Services\Site::enderecoLinhas())
         ->map(fn (string $linha): string => str_replace(' - ', '&nbsp;-&nbsp;', e($linha)))
@@ -20,6 +25,10 @@
         <svg viewBox="0 0 201.47 32.24" role="img" aria-label="Marina Mariz"><use href="#logo-p"></use></svg>
         <div class="footer__social" style="margin-top:20px">@foreach ($redes as $chave => $rede)<a href="{{ $rede['url'] }}" target="_blank" rel="noopener" aria-label="{{ $rede['rotulo'] }}"><i class="ph ph-{{ $chave }}-logo" aria-hidden="true"></i></a>@endforeach</div>
         <address class="footer__addr">{{ str($endereco)->toHtmlString() }}</address>
+        <div class="footer__rotas">
+          <a href="{{ $rotaMaps }}" target="_blank" rel="noopener"><i class="ph ph-map-pin" aria-hidden="true"></i>Traçar rota no Google Maps</a>
+          <a href="{{ $rotaWaze }}" target="_blank" rel="noopener"><i class="ph ph-navigation-arrow" aria-hidden="true"></i>Traçar rota no Waze</a>
+        </div>
       </div>
       <div class="footer__col rise" data-d="1"><h3>Navegação</h3><ul><li><a href="/">Início</a></li><li><a href="/sobre">Sobre</a></li></ul></div>
       <div class="footer__col rise" data-d="2"><h3>Serviços</h3><ul><li><a href="/especialidades">Especialidades</a></li><li><a href="/amara">Amara</a></li></ul></div>
@@ -47,7 +56,7 @@
         <a href="/termos-de-uso">Termos de Uso</a>
         <a href="#aviso-de-cookies">Preferências de cookies</a>
       </div>
-      <span class="footer__copy">© <span data-year>2026</span> Dra. Marina Mariz. Todos os direitos reservados.</span>
+      <span class="footer__copy">© <span data-year>2026</span> Dra. Marina Mariz. Todos os direitos reservados. · <a href="https://agaia.com.br/" target="_blank" rel="noopener">Criado pela GAIA.</a></span>
     </div>
 
     {{-- Registro visivel e exigencia da Resolucao CFM 2.336/2023. --}}

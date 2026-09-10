@@ -16,18 +16,18 @@
   <div class="scene__body">
     <svg class="amh__logo rise" data-d="1" viewBox="0 0 659.72 87.45" role="img" aria-label="Amara"><use href="#amara-logo"></use></svg>
     <h1 class="t-h1 rise" data-d="2" data-split id="amara-titulo">A força do coletivo</h1>
-    <p class="amh__copy rise" data-d="3">A Dra. Marina Mariz é uma das <strong>fundadoras da Amara</strong>: um núcleo de obstetrícia formado por <strong>mulheres, mães e médicas obstetras</strong> que compartilham a mesma filosofia — <strong>ciência e acolhimento</strong> em cada nascimento.</p>
+    <p class="amh__copy rise" data-d="3">A Dra. Marina Mariz é uma das <strong>fundadoras da Amara</strong>: um núcleo de obstetrícia formado por <strong>mulheres, mães e médicas obstetras</strong> que compartilham a mesma filosofia: <strong>ciência e acolhimento</strong> em cada nascimento.</p>
     <div class="amh__actions rise" data-d="4">
       <a class="btn btn--primary" href="/contato"><span class="btn__label">Agendar consulta <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
       <a class="btn btn--outline" href="#coletivo-equipe"><span class="btn__label">Quem forma o coletivo <i class="ph ph-arrow-down" aria-hidden="true"></i></span></a>
     </div>
 
     <div class="amh__fan rise rise--zoom" data-d="5">
-      <figure><img src="assets/img/amara/1.webp" alt="" width="675" height="900" loading="lazy" decoding="async"></figure>
-      <figure><img src="assets/img/amara/9.webp" alt="" width="675" height="900" loading="lazy" decoding="async"></figure>
-      <figure><img src="assets/img/amara/19.webp" alt="Profissionais da Amara reunidas" width="642" height="900" fetchpriority="high"></figure>
-      <figure><img src="assets/img/amara/12.webp" alt="" width="900" height="598" loading="lazy" decoding="async"></figure>
       <figure><img src="assets/img/amara/15.webp" alt="" width="599" height="900" loading="lazy" decoding="async"></figure>
+      <figure><img src="assets/img/amara/9.webp" alt="" width="675" height="900" loading="lazy" decoding="async"></figure>
+      <figure><img src="assets/img/imagem-008.webp" alt="As quatro obstetras da Amara reunidas no consultório" width="2174" height="1450" fetchpriority="high" style="object-position:79% 50%"></figure>
+      <figure><img src="assets/img/amara/12.webp" alt="" width="900" height="598" loading="lazy" decoding="async"></figure>
+      <figure><img src="assets/img/imagem-009.webp" alt="" width="2400" height="1600" loading="lazy" decoding="async" style="object-position:0 50%"></figure>
       <svg class="amh__badge" viewBox="0 0 149.31 148.64" aria-hidden="true"><use href="#amara-badge"></use></svg>
     </div>
   </div>
@@ -40,8 +40,8 @@
     <div class="amd__grid">
       <h2 class="t-h2 rise" id="sistema-titulo">Mais do que uma equipe<br>Um sistema de cuidado</h2>
       <div class="amd__text">
-        <p class="rise" data-d="1">A Amara é um <strong>coletivo multidisciplinar</strong> que reúne profissionais cuidadosamente selecionados pela Dra. Marina Mariz — unidos não apenas pela <strong>excelência técnica</strong>, mas por uma <strong>filosofia de prática compartilhada</strong>.</p>
-        <p class="rise" data-d="2">Aqui, cada profissional conhece o trabalho dos demais. As decisões são tomadas <strong>em conjunto</strong>. A comunicação é <strong>fluida</strong>. E a mulher — sempre no centro — recebe um cuidado que é <strong>maior do que a soma das partes</strong>.</p>
+        <p class="rise" data-d="1">Um <strong>núcleo de obstetrícia</strong> que combina excelência técnica, cuidado humanizado e uma <strong>abordagem personalizada</strong> para cada paciente.</p>
+        <p class="rise" data-d="2">A Amara reúne uma <strong>equipe de apoio multidisciplinar</strong>. Com enfermeiras obstétricas, doulas, consultoras de amamentação e outras profissionais, para acompanhar diferentes necessidades ao longo da <strong>gestação, parto e pós-parto</strong>.</p>
       </div>
     </div>
 
@@ -49,44 +49,44 @@
       <li class="amln__step rise" data-d="1">
         <span class="amln__dot" aria-hidden="true"><i class="ph ph-compass"></i></span>
         <span class="amln__fase">Antes</span>
-        <h3>Tentando engravidar</h3>
-        <p>Consulta preconcepcional, exames e ajustes de rotina — o corpo preparado antes do primeiro atraso.</p>
+        <h3>Planejando engravidar</h3>
+        <p>Consulta pré-concepcional, exames, vacinas e ajustes importantes para preparar a saúde antes mesmo do teste positivo.</p>
       </li>
       <li class="amln__step rise" data-d="2">
         <span class="amln__dot" aria-hidden="true"><i class="ph ph-heart"></i></span>
         <span class="amln__fase">1º trimestre</span>
-        <h3>O positivo</h3>
-        <p>Confirmação, primeiro ultrassom e o pré-natal desenhado com você — não um protocolo pronto.</p>
+        <h3>O começo da gestação</h3>
+        <p>Confirmação, primeiros exames e início do pré-natal com tempo para entender sua história, seus receios e o que essa gestação pede.</p>
       </li>
       <li class="amln__step rise" data-d="3">
         <span class="amln__dot" aria-hidden="true"><i class="ph ph-stethoscope"></i></span>
         <span class="amln__fase">2º trimestre</span>
-        <h3>A gestação em curso</h3>
-        <p>Consultas no seu ritmo, exames de rotina e as dúvidas respondidas também fora do consultório.</p>
+        <h3>A gestação ganha ritmo</h3>
+        <p>Acompanhamento da saúde materno-fetal, exames de rotina e espaço para dúvidas, decisões e preparação para as próximas etapas.</p>
       </li>
       <li class="amln__step rise" data-d="4">
         <span class="amln__dot" aria-hidden="true"><i class="ph ph-clock-countdown"></i></span>
         <span class="amln__fase">3º trimestre</span>
-        <h3>Preparo para o parto</h3>
-        <p>Plano de parto escrito a quatro mãos e compartilhado com todo o coletivo, semanas antes da hora.</p>
+        <h3>Preparando o nascimento</h3>
+        <p>Conversas sobre possibilidades de parto, preferências, analgesia, intervenções e cenários possíveis para chegar ao nascimento com mais clareza.</p>
       </li>
       <li class="amln__step rise" data-d="5">
         <span class="amln__dot" aria-hidden="true"><i class="ph ph-baby"></i></span>
         <span class="amln__fase">O nascimento</span>
         <h3>Parto</h3>
-        <p>Quem entra na sala já acompanhou tudo: obstetra, enfermeira e doula na mesma conduta.</p>
+        <p>A equipe acompanha de perto o trabalho de parto, oferecendo suporte, condução clínica e decisões compartilhadas até o nascimento.</p>
       </li>
       <li class="amln__step rise" data-d="6">
         <span class="amln__dot" aria-hidden="true"><i class="ph ph-hand-heart"></i></span>
         <span class="amln__fase">Depois</span>
         <h3>Puerpério</h3>
-        <p>Amamentação, recuperação e saúde mental acompanhadas nas semanas em que a rotina inteira muda.</p>
+        <p>Recuperação física, amamentação, saúde emocional, contracepção e adaptação: o acompanhamento continua quando o bebê já está nos braços.</p>
       </li>
     </ol>
 
     <div class="amd__foot rise" data-d="3">
-      <p class="amd__cue">Cada nascimento é <strong>conduzido por quem já acompanhou a gestação inteira</strong> — de antes do teste positivo às semanas seguintes ao parto.</p>
-      <a class="btn btn--primary" href="/contato"><span class="btn__label">Quero acompanhamento <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
+      <p class="amd__cue">A Dra. Marina ao seu lado para que você viva a gestação e o parto com <strong>mais segurança e serenidade</strong>.</p>
+      <a class="btn btn--primary" href="/contato"><span class="btn__label">Quero a assistência personalizada <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
     </div>
   </div>
 </section>
@@ -108,7 +108,7 @@
   <div class="scene__body">
     <header class="sec__head sec__head--mid">
       <h2 class="t-h2 rise" id="equipe-titulo">Quem forma o coletivo</h2>
-      <p class="lead rise" data-d="2">Quatro frentes que se revezam e se cobrem. <strong>Nenhuma delas trabalha isolada</strong> — e nenhuma delas chega sem saber a sua história.</p>
+      <p class="lead rise" data-d="2">Uma equipe que trabalha de <strong>forma integrada</strong>, compartilhando informações, decisões e <strong>responsabilidade pelo seu acompanhamento</strong>.</p>
     </header>
 
     <ul class="amt__grid">
@@ -140,13 +140,13 @@
         <img src="assets/img/amara/12.webp" alt="Família com o recém-nascido no quarto da maternidade" width="900" height="598" loading="lazy" decoding="async">
         <div class="amt__tag">
           <strong>Consultoras</strong>
-          <span>Apoio especializado nas semanas seguintes ao parto, quando a rotina muda.</span>
+          <span>Apoio especializado nas semanas seguintes ao parto.</span>
         </div>
       </article></li>
     </ul>
 
     <div class="amt__foot rise" data-d="5">
-      <p class="amt__note">O núcleo reúne <strong>quatro obstetras</strong>, além de enfermeiras obstétricas,<br>doulas e consultoras — todas escolhidas pela Dra. Marina Mariz.</p>
+      <p class="amt__note">A Amara é formada por <strong>quatro obstetras</strong> e uma equipe de apoio multidisciplinar.<br>Assistência humanizada, especializada e construída de forma integrada.</p>
       <a class="btn btn--primary" href="/contato"><span class="btn__label">Marcar minha consulta <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
     </div>
   </div>
@@ -158,39 +158,39 @@
   <div class="scene__body">
     <header class="sec__head sec__head--mid">
       <h2 class="t-h2 rise" id="filosofia-titulo">Uma filosofia compartilhada</h2>
-      <p class="lead rise" data-d="2">Quatro compromissos que valem para todas as <strong>profissionais do coletivo</strong> — e que <strong>a paciente sente na prática</strong>, não no papel.</p>
+      <p class="lead rise" data-d="2">Compromissos que orientam a atuação de toda a equipe <br class="br-desk">e <strong>percebidos pela paciente na prática</strong>, não no papel.</p>
     </header>
 
     <ol class="amp__grid">
       <li class="rise rise--left" data-d="1"><article class="amp__item">
         <span class="amp__ico"><i class="ph ph-shield-check" aria-hidden="true"></i></span>
         <div>
-          <h3>Backup confiável</h3>
-          <p>Se a Marina não puder estar, quem chega já conhece a sua história, o seu plano de parto e as suas escolhas. <strong>Ninguém começa do zero.</strong></p>
+          <h3>Valorização da experiência da mulher</h3>
+          <p>Cada mulher vive a gestação e o parto de forma única. <strong>Sua história, seus limites e suas preferências fazem parte das decisões.</strong></p>
         </div>
       </article></li>
 
       <li class="rise rise--right" data-d="2"><article class="amp__item">
         <span class="amp__ico"><i class="ph ph-compass" aria-hidden="true"></i></span>
         <div>
-          <h3>Conduta alinhada</h3>
-          <p>As profissionais partilham os mesmos protocolos e a mesma leitura de evidência. <strong>Você não recebe orientações que se contradizem</strong> de uma consulta para a outra.</p>
+          <h3>Assistência baseada em ciência e acolhimento</h3>
+          <p>Condutas orientadas pelas melhores evidências, sem perder a escuta e a individualização. <strong>Rigor técnico e presença caminham juntos</strong> em cada etapa.</p>
         </div>
       </article></li>
 
       <li class="rise rise--left" data-d="3"><article class="amp__item">
         <span class="amp__ico"><i class="ph ph-chats-circle" aria-hidden="true"></i></span>
         <div>
-          <h3>Comunicação fluida</h3>
-          <p>Os casos são discutidos entre a equipe. <strong>O que uma observa chega às outras</strong> antes da próxima consulta — sem depender de você repetir tudo.</p>
+          <h3>Informação confiável para escolhas conscientes</h3>
+          <p>Informação clara sobre possibilidades, riscos, benefícios e alternativas. <strong>Entender o que está acontecendo também faz parte do cuidado.</strong></p>
         </div>
       </article></li>
 
       <li class="rise rise--right" data-d="4"><article class="amp__item">
         <span class="amp__ico"><i class="ph ph-hand-heart" aria-hidden="true"></i></span>
         <div>
-          <h3>Mulher no centro</h3>
-          <p>A decisão final é sempre sua. O papel do coletivo é dar <strong>informação, contexto e segurança</strong> para que ela seja tomada com calma.</p>
+          <h3>Atuação integrada para um cuidado contínuo</h3>
+          <p>As profissionais trabalham de forma conectada, compartilhando informações e condutas. <strong>A paciente não precisa recomeçar sua história a cada atendimento.</strong></p>
         </div>
       </article></li>
     </ol>
@@ -203,7 +203,7 @@
 <section class="scene cta scheme-04" id="cta" data-scene data-tone="dark" aria-labelledby="cta-titulo">
   <div class="scene__body">
     <h2 class="t-h2 rise" id="cta-titulo">Conheça a equipe<br>que vai cuidar de você</h2>
-    <p class="lead rise" data-d="1"><span>Agende uma consulta com a Dra. Marina Mariz e<br>conheça de perto o coletivo que acompanha cada gestação.</span></p>
+    <p class="lead rise" data-d="1"><span>Agende uma consulta com a Dra. Marina Mariz e<br>conheça também a equipe multidisciplinar Amara.</span></p>
     <div class="cta__action rise rise--zoom" data-d="2"><a class="btn btn--primary" href="/contato"><span class="btn__label">Agendar consulta <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a></div>
   </div>
 </section>

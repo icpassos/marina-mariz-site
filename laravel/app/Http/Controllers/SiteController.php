@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Services\Site;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\View;
 
 /**
@@ -12,10 +14,27 @@ use Illuminate\View\View;
  */
 class SiteController extends Controller
 {
+    /** Quantos posts a home mostra na cena do blog. */
+    private const POSTS_NA_HOME = 6;
+
     /** O nome da view vem de `defaults()` na rota, nunca da URL. */
     public function pagina(string $pagina): View
     {
-        return view("site.{$pagina}");
+        // So a home lista post; as outras paginas sao fixas em codigo.
+        return view("site.{$pagina}", $pagina === 'index'
+            ? ['ultimosPosts' => $this->ultimosPosts()]
+            : []);
+    }
+
+    /** Mesmo recorte publico do blog: `noAr()`, mais novo primeiro. */
+    private function ultimosPosts(): Collection
+    {
+        return Post::noAr()
+            ->with('categoria')
+            ->orderByDesc('published_at')
+            ->orderByDesc('id')
+            ->limit(self::POSTS_NA_HOME)
+            ->get();
     }
 
     /**

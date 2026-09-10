@@ -32,7 +32,7 @@
   <div class="scene__body">
     <span class="eyebrow rise">Contato</span>
     <h1 class="t-h1 rise" data-d="1" data-split id="contato-titulo">O primeiro passo<br>é uma conversa</h1>
-    <p class="cth__lead rise" data-d="2">Seja para <strong>agendar uma consulta</strong>, tirar uma dúvida<br>ou simplesmente conhecer melhor o trabalho — estou aqui.<br>Entre em contato pelo canal que for mais confortável para você.</p>
+    <p class="cth__lead rise" data-d="2">Seja para <strong>agendar uma consulta</strong>, tirar uma dúvida<br>ou simplesmente conhecer melhor o trabalho. Estou aqui.<br>Entre em contato pelo canal que for mais confortável para você.</p>
 
     <!-- blade: os três valores vêm do singleton de contato -->
     <div class="cth__atalhos rise" data-d="3">
@@ -53,7 +53,7 @@
       </a>
     </div>
 
-    <p class="cth__status rise" data-d="4"><span class="pulse" aria-hidden="true"></span>Segunda a sexta, 8h às 18h — resposta em até 1 dia útil</p>
+    <p class="cth__status rise" data-d="4"><span class="pulse" aria-hidden="true"></span><span>Segunda a sexta, 8h às 18h</span><span>resposta em até 1 dia útil</span></p>
   </div>
 </section>
 
@@ -64,7 +64,7 @@
   <div class="scene__body">
     <div class="ctf__lado">
       <h2 class="t-h2 rise" id="mensagem-titulo">Prefere escrever?</h2>
-      <p class="ctf__lead rise" data-d="1">Conte o que precisa em poucas linhas. A mensagem chega direto na caixa da equipe — e ninguém some com ela.</p>
+      <p class="ctf__lead rise" data-d="1">Conte o que precisa em poucas linhas. A mensagem chega direto na caixa da equipe. E ninguém some com ela.</p>
 
       <ol class="ctf__passos rise" data-d="2">
         <li class="ctf__passo">
@@ -143,7 +143,7 @@
 
     <div class="ctm__dados">
       <span class="eyebrow rise">O consultório</span>
-      <h2 class="t-h2 rise" data-d="1" id="consultorio-titulo">Onde a conversa<br>acontece pessoalmente</h2>
+      <h2 class="t-h2 rise" data-d="1" id="consultorio-titulo">Nosso encontro<br>presencial.</h2>
 
       <ul class="ctm__lista rise" data-d="2">
         <li class="ctm__linha">
@@ -173,7 +173,7 @@
 <section class="scene ctw scheme-05" id="agendar" data-scene data-tone="light" aria-labelledby="agendar-titulo">
   <div class="scene__body">
     <span class="ctw__ico rise rise--zoom" aria-hidden="true"><i class="ph ph-whatsapp-logo"></i></span>
-    <h2 class="t-h2 rise" data-d="1" id="agendar-titulo">Prefere agendar<br>diretamente?</h2>
+    <h2 class="t-h2 rise" data-d="1" id="agendar-titulo">Prefere agendar diretamente<br>com a nossa equipe de atendimento?</h2>
     <p class="ctw__lead rise" data-d="2">Chame no WhatsApp para <strong>verificar disponibilidade</strong> e marcar sua consulta de forma rápida.</p>
     <a class="btn btn--primary btn--grande rise rise--zoom" data-d="3" href="{{ \App\Services\Site::linkWhatsapp() }}" target="_blank" rel="noopener"><span class="btn__label"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i> Chamar no WhatsApp</span></a>
     <p class="ctw__nota rise" data-d="4">{{ \App\Services\Site::whatsappFormatado() }} · segunda a sexta, 8h às 18h</p>

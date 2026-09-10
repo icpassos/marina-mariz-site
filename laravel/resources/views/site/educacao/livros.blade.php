@@ -109,7 +109,7 @@
 <section class="scene lvn scheme-04" id="avisos" data-scene data-tone="dark" aria-labelledby="avisos-titulo">
   <div class="scene__body">
     <div>
-      <h2 class="t-h2 rise" id="avisos-titulo">Quer saber quando sai o próximo?</h2>
+      <h2 class="t-h2 rise" id="avisos-titulo">Quer saber quando será <br class="br-desk">publicado o próximo livro?</h2>
       <p class="lvn__lead rise" data-d="1">Receba <strong>lançamentos</strong> e conteúdos em primeira mão.</p>
     </div>
 
