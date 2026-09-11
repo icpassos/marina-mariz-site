@@ -14,8 +14,7 @@ use Illuminate\Queue\SerializesModels;
  * Aviso para a equipe a cada registro novo (doc 04).
  *
  * Ninguem abre painel todo dia; sem este e-mail a caixa vira cemiterio.
- * O corpo traz so nome, origem, submission_id e o link do painel — nunca o
- * texto da mensagem, telefone, registro profissional ou anotacao.
+ * O corpo traz os dados enviados no formulario e o link do painel.
  */
 class AvisoDeFormulario extends Mailable
 {

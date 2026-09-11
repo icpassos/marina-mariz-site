@@ -58,11 +58,17 @@ class Mensagem extends Model implements VaiParaOutbox
 
     public function linhasDoEmail(): array
     {
-        return [
+        return array_filter([
             'Nome' => $this->nome,
             'E-mail' => $this->email,
+            'WhatsApp' => $this->whatsapp,
             'Origem' => $this->origem->getLabel(),
-        ];
+            'Mensagem' => $this->texto,
+            'Profissão' => $this->profissao,
+            'Registro profissional' => $this->registro_profissional,
+            'Instituição' => $this->instituicao,
+            'Modalidade' => $this->modalidade,
+        ], fn ($valor): bool => filled($valor));
     }
 
     public function linkNoPainel(): string

@@ -41,6 +41,7 @@ class OutboxTest extends TestCase
             'submission_id' => (string) Str::uuid(),
             'nome' => 'Ana Souza',
             'email' => 'ana@example.com',
+            'whatsapp' => '(31) 99999-0000',
             'texto' => self::TEXTO,
             'ciencia_politica' => '1',
         ], [], [], ['HTTP_ACCEPT' => 'application/json'])->assertOk();
@@ -80,7 +81,7 @@ class OutboxTest extends TestCase
             && $mail->hasReplyTo('ana@example.com'));
     }
 
-    public function test_email_de_aviso_nao_leva_o_texto_da_mensagem(): void
+    public function test_email_de_aviso_leva_todos_os_dados_da_mensagem(): void
     {
         Mail::fake();
 
@@ -90,7 +91,10 @@ class OutboxTest extends TestCase
         Mail::assertSent(AvisoDeFormulario::class, function (AvisoDeFormulario $mail): bool {
             $corpo = $mail->render();
 
-            return ! str_contains($corpo, self::TEXTO) && str_contains($corpo, 'Ana Souza');
+            return str_contains($corpo, self::TEXTO)
+                && str_contains($corpo, 'Ana Souza')
+                && str_contains($corpo, 'ana@example.com')
+                && str_contains($corpo, '(31) 99999-0000');
         });
     }
 
