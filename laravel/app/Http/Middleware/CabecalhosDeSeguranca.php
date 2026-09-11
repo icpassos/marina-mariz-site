@@ -20,11 +20,7 @@ class CabecalhosDeSeguranca
         $response->headers->set('Cross-Origin-Opener-Policy', 'same-origin');
         $response->headers->set('Cross-Origin-Resource-Policy', 'same-site');
 
-        // O painel Filament/Livewire tem a propria arvore de scripts. A CSP
-        // abaixo protege os documentos do site publico, que sao os que usam
-        // estes fornecedores externos conhecidos.
-        if (! $request->is('paineladm', 'paineladm/*', 'livewire', 'livewire/*')) {
-            $response->headers->set('Content-Security-Policy', implode('; ', [
+        $response->headers->set('Content-Security-Policy', implode('; ', [
                 "default-src 'self'",
                 "base-uri 'self'",
                 "object-src 'none'",
@@ -33,12 +29,11 @@ class CabecalhosDeSeguranca
                 "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net",
                 "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
                 "font-src 'self' https://cdn.jsdelivr.net data:",
-                "img-src 'self' data: https:",
-                "media-src 'self'",
+                "img-src 'self' data: blob: https:",
+                "media-src 'self' blob:",
                 "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://www.facebook.com",
                 'upgrade-insecure-requests',
-            ]));
-        }
+        ]));
 
         return $response;
     }
