@@ -80,6 +80,14 @@ class CookiesTest extends TestCase
             ->assertDontSee('aria-live="polite" hidden>', escape: false);
     }
 
+    public function test_cookies_opcionais_nao_nascem_marcados(): void
+    {
+        $html = $this->get('/pagina-de-teste')->assertOk()->getContent();
+
+        $this->assertStringNotContainsString(' checked', $html);
+        $this->assertSame(2, substr_count($html, 'type="checkbox"'));
+    }
+
     // ── Com escolha ──────────────────────────────────────────────────
 
     public function test_com_consentimento_as_tags_entram(): void

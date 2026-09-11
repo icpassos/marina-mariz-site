@@ -61,3 +61,8 @@ Route::get('/blog/{slug}', [BlogController::class, 'post'])->name('site.blog.pos
 Route::get('/{ano}/{mes}/{dia}/{slug}', [BlogController::class, 'permalinkAntigo'])
     ->where(['ano' => '\d{4}', 'mes' => '\d{2}', 'dia' => '\d{2}', 'slug' => '[a-z0-9\-]+'])
     ->name('site.blog.permalink-antigo');
+
+// Mantem a pagina 404 dentro do grupo web para ela receber os mesmos
+// cabecalhos de seguranca das demais paginas publicas.
+Route::fallback(fn () => response()->view('errors.404', status: 404))
+    ->name('site.nao-encontrada');

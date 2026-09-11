@@ -25,8 +25,10 @@
 @yield('preloads')
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"
+        integrity="sha384-6p9AefaqUhEVheRlj1mpAkbngHXy9mbYMrIdcIt4Jlc9lOLIablJq3bBsLOjGwZ7" crossorigin="anonymous">
 <link rel="stylesheet" href="/assets/css/site.css">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="{{ $canonical }}">
 <meta property="og:type" content="{{ $ogTipo ?? 'website' }}">
 @yield('robots')

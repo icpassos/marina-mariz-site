@@ -1,0 +1,15 @@
+{
+  "name": "Dra. Marina Mariz",
+  "short_name": "Marina Mariz",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#16191c",
+  "theme_color": "#907de2",
+  "icons": [
+    {
+      "src": "/images/marina-simbolo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

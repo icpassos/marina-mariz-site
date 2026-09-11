@@ -48,10 +48,9 @@
                     </h2>
 
                     <div class="switch-stack">
-                        <label class="switch">
-                            {{-- Sempre ligado: `disabled` nao envia nada, e nao ha
-                                 o que enviar — necessarios nao se desligam. --}}
-                            <input type="checkbox" role="switch" checked disabled>
+                        {{-- Necessarios sao informacao, nao uma escolha de
+                             consentimento. Nao use checkbox pre-marcada aqui. --}}
+                        <div class="switch switch--necessario">
                             <span class="inner" aria-hidden="true"><span class="tick"></span></span>
                             <span>
                                 <b>Necessários</b>
@@ -60,7 +59,7 @@
                                     escolha de cookies. Fornecedor: este site. Duração: 12 meses.
                                 </small>
                             </span>
-                        </label>
+                        </div>
 
                         <label class="switch">
                             <input type="checkbox" role="switch" name="analiticos" value="1"
@@ -173,7 +172,9 @@
     .switch input:checked + .inner { background: var(--purple); box-shadow: 0 8px 24px rgb(var(--accent-rgb) / .22); }
     .switch input:checked + .inner .tick { transform: translateX(22px); background: var(--ink); }
     .switch input:focus-visible + .inner { outline: 3px solid rgb(var(--accent-rgb) / .38); outline-offset: 3px; }
-    .switch:has(input:disabled) { opacity: .4; cursor: not-allowed; }
+    .switch--necessario { opacity: .7; cursor: default; }
+    .switch--necessario .inner { background: var(--purple); }
+    .switch--necessario .tick { transform: translateX(22px); background: var(--ink); }
     .switch-stack { display: grid; gap: 7px; }
     .choice-helper { display: block; margin-top: 8px; color: var(--text-muted); font-size: var(--caption); line-height: 1.5; }
 

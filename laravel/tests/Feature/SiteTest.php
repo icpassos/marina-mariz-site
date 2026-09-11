@@ -66,6 +66,35 @@ class SiteTest extends TestCase
         $this->get('/nao-existe')->assertNotFound();
     }
 
+    public function test_site_publico_envia_cabecalhos_de_seguranca(): void
+    {
+        $this->get('/')
+            ->assertOk()
+            ->assertHeader('Strict-Transport-Security', 'max-age=31536000')
+            ->assertHeader('X-Content-Type-Options', 'nosniff')
+            ->assertHeader('X-Frame-Options', 'SAMEORIGIN')
+            ->assertHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
+            ->assertHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=(), usb=()')
+            ->assertHeader('Cross-Origin-Opener-Policy', 'same-origin')
+            ->assertHeader('Cross-Origin-Resource-Policy', 'same-site')
+            ->assertHeader('Content-Security-Policy');
+
+        $this->get('/paineladm-qualquer')
+            ->assertNotFound()
+            ->assertHeader('Content-Security-Policy');
+    }
+
+    public function test_home_nao_repete_ids_e_declara_integridade_e_manifesto(): void
+    {
+        $resposta = $this->get('/')->assertOk();
+        $html = $resposta->getContent();
+        preg_match_all('/\\sid="([^"]+)"/', $html, $ids);
+
+        $this->assertSame(array_unique($ids[1]), $ids[1]);
+        $resposta->assertSee('integrity="sha384-6p9AefaqUhEVheRlj1mpAkbngHXy9mbYMrIdcIt4Jlc9lOLIablJq3bBsLOjGwZ7"', false);
+        $resposta->assertSee('<link rel="manifest" href="/site.webmanifest">', false);
+    }
+
     // ── Rodape ───────────────────────────────────────────────────────
 
     public function test_rodape_traz_os_mesmos_contatos_do_html_de_origem(): void

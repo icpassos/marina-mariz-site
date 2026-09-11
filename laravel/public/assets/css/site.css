@@ -1130,7 +1130,7 @@ a:hover .ph-arrow-up-right,button:hover .ph-arrow-up-right{transform:translate(3
 .art__cta.close--news .close__form,
 .art__cta.close--news .close__consent{grid-column:1}
 .art__cta.close--news .close__form{flex-direction:column;align-items:stretch;gap:12px}
-.art__cta.close--news .close__form input{flex:none;width:100%}
+.art__cta.close--news .close__form input:not([type="checkbox"]){flex:none;width:100%}
 .art__cta.close--news .close__form .btn{width:100%}
 
 /* --- Relacionados --------------------------------------------------------- */

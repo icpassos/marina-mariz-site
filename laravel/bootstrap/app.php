@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\CabecalhosDeSeguranca;
 use App\Http\Middleware\LeConsentimentoDeCookies;
 use App\Support\AvisoDeCookies;
 use Illuminate\Foundation\Application;
@@ -18,7 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->encryptCookies(except: [AvisoDeCookies::COOKIE]);
 
         // Decide o que pode entrar no HTML antes de qualquer view renderizar.
-        $middleware->web(append: [LeConsentimentoDeCookies::class]);
+        $middleware->web(append: [LeConsentimentoDeCookies::class, CabecalhosDeSeguranca::class]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

@@ -448,6 +448,20 @@ class BlogTest extends TestCase
         $this->assertNull($post->episode_url);
     }
 
+    public function test_consentimento_da_newsletter_fica_dentro_do_formulario_do_post(): void
+    {
+        $post = $this->postCompleto();
+        $post->update(['closing_cta' => PostCta::Newsletter]);
+
+        $html = $this->get('/blog/'.$post->slug)->assertOk()->getContent();
+        $documento = new \DOMDocument;
+        @$documento->loadHTML($html);
+
+        $this->assertSame(1, (new \DOMXPath($documento))->query(
+            '//form[contains(concat(" ", normalize-space(@class), " "), " close__form ")]//input[@name="aceita_newsletter"]'
+        )->length);
+    }
+
     // ── posts relacionados ──────────────────────────────────────────
 
     public function test_relacionado_arquivado_ou_na_lixeira_some_da_lista(): void

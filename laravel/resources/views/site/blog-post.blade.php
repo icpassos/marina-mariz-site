@@ -98,12 +98,12 @@
           <input type="text" name="apelido" class="bln__trap" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="text" name="nome" placeholder="Seu nome" autocomplete="name" required>
           <input type="email" name="email" placeholder="seu@email.com" autocomplete="email" required>
+          <label class="close__consent">
+            <input type="checkbox" name="aceita_newsletter" value="1" required>
+            <span>Quero receber a newsletter e li a <a href="/politica-de-privacidade">Política de Privacidade</a></span>
+          </label>
           <button class="btn btn--primary" type="submit"><span class="btn__label">Assinar <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></button>
         </form>
-        <label class="close__consent">
-          <input type="checkbox" name="aceita_newsletter" value="1" required>
-          <span>Quero receber a newsletter e li a <a href="/politica-de-privacidade">Política de Privacidade</a></span>
-        </label>
       </div>
     </aside>
     @break
