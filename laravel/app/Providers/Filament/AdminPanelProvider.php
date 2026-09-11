@@ -36,7 +36,7 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogo(fn (): View => view('filament.brand-logo'))
             ->brandLogoHeight('1.75rem')
             // SIMB do DS, o simbolo isolado.
-            ->favicon(asset('images/marina-simbolo.svg'))
+            ->favicon(asset('images/marina-simbolo.svg').'?v=2')
             // Mozaic GEO, a fonte de leitura e interface do DS. LocalFontProvider
             // sem url so define --font-family; o @font-face vive no tema, servido
             // pelo Vite a partir de resources/fonts. Nenhuma CDN.
