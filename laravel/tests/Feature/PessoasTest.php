@@ -13,6 +13,7 @@ use App\Models\Mensagem;
 use App\Models\OutboxJob;
 use App\Support\IpPseudonimo;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -48,6 +49,7 @@ class PessoasTest extends TestCase
     {
         return [
             'submission_id' => $submissionId,
+            'iniciado_em' => Crypt::encryptString((string) now()->subSeconds(4)->timestamp),
             'nome' => 'Ana Souza',
             'email' => 'ana@example.com',
             'whatsapp' => '(31) 99999-0000',
@@ -134,6 +136,16 @@ class PessoasTest extends TestCase
         $this->assertSame(0, Mensagem::count());
     }
 
+    public function test_envio_rapido_demais_nao_grava(): void
+    {
+        $dados = $this->dadosDeContato((string) Str::uuid());
+        $dados['iniciado_em'] = Crypt::encryptString((string) now()->timestamp);
+
+        $this->envia('/formularios/contato', $dados)->assertStatus(422);
+        $this->assertSame(0, Mensagem::count());
+        $this->assertSame(0, OutboxJob::count());
+    }
+
     public function test_contato_nao_aceita_campos_de_formacao_profissional(): void
     {
         $dados = $this->dadosDeContato((string) Str::uuid()) + ['profissao' => 'Enfermeira'];
@@ -145,6 +157,7 @@ class PessoasTest extends TestCase
     {
         $this->envia('/formularios/formacao-profissional', [
             'submission_id' => (string) Str::uuid(),
+            'iniciado_em' => Crypt::encryptString((string) now()->subSeconds(4)->timestamp),
             'nome' => 'Bia Lima',
             'email' => 'bia@example.com',
             'texto' => 'Quero saber da próxima turma.',

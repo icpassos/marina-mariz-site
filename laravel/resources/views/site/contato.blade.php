@@ -102,6 +102,7 @@
     <form class="ctf__form rise rise--right" data-d="2" method="post" action="{{ route('formularios.contato') }}" novalidate>
       @csrf
       <input type="hidden" name="submission_id" value="{{ old('submission_id', \Illuminate\Support\Str::uuid()) }}">
+      <input type="hidden" name="iniciado_em" value="{{ old('iniciado_em', \Illuminate\Support\Facades\Crypt::encryptString((string) now()->timestamp)) }}">
       <input type="hidden" name="form" value="{{ $chave }}">
       <input type="hidden" name="origem" value="contato">
       <input type="text" name="website" class="bln__trap" tabindex="-1" autocomplete="off" aria-hidden="true">

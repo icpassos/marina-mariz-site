@@ -8,6 +8,7 @@ use App\Models\Mensagem;
 use App\Models\OutboxJob;
 use App\Support\Outbox;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
@@ -39,6 +40,7 @@ class OutboxTest extends TestCase
     {
         $this->call('POST', '/formularios/contato', [
             'submission_id' => (string) Str::uuid(),
+            'iniciado_em' => Crypt::encryptString((string) now()->subSeconds(4)->timestamp),
             'nome' => 'Ana Souza',
             'email' => 'ana@example.com',
             'whatsapp' => '(31) 99999-0000',

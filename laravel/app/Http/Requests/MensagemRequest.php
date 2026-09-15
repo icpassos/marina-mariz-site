@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use App\Enums\OrigemMensagem;
+use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Support\Facades\Crypt;
 
 class MensagemRequest extends FormularioRequest
 {
@@ -12,6 +14,19 @@ class MensagemRequest extends FormularioRequest
         $extrasObrigatorios = $this->origem() === OrigemMensagem::FormacaoProfissional;
 
         return array_merge($this->regrasComuns(), [
+            'iniciado_em' => ['required', 'string', function (string $attribute, mixed $value, \Closure $fail): void {
+                try {
+                    $iniciadoEm = (int) Crypt::decryptString($value);
+                } catch (DecryptException) {
+                    $fail('Não foi possível enviar o formulário.');
+
+                    return;
+                }
+
+                if ($iniciadoEm > now()->subSeconds(3)->timestamp) {
+                    $fail('Não foi possível enviar o formulário.');
+                }
+            }],
             'whatsapp' => ['nullable', 'string', 'max:30'],
             'texto' => ['required', 'string', 'max:5000'],
 
