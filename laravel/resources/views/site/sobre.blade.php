@@ -17,7 +17,7 @@
   <div class="scene__body">
     <div class="phero__copy">
       <h1 class="t-h1 rise" data-d="1" data-split id="sobre-titulo">Mulher. Médica.<br>Obstetra. Mãe.<br><span class="t-h1__gap">Minha prática nasce<br>de tudo o que sou.</span></h1>
-      <p class="lead rise" data-d="2">Minha prática carrega <strong>duas formações</strong>: a que veio da ciência e a que a maternidade <br class="br-desk">me deu. Esses dois mundos se encontram em cada atendimento que realizo.</p>
+      <p class="lead rise" data-d="2"><strong>Duas formações</strong>: a que veio da ciência e a que a maternidade <br class="br-desk">me deu. Esses dois mundos se encontram em cada atendimento que realizo.</p>
       <p class="lead rise" data-d="3">Uma gestação pode exigir protocolos, exames e condutas muito precisas. Mas cuidar <br class="br-desk">de uma mulher exige <strong>enxergar além deles</strong>. É nesse equilíbrio entre evidências, individualização, contexto e humanidade que encontro a forma mais responsável <br class="br-desk">e acolhedora possível para exercer a medicina.</p>
       <div class="phero__actions rise" data-d="4">
         <a class="btn btn--primary" href="/contato"><span class="btn__label">Agendar consulta <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
