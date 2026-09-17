@@ -704,7 +704,7 @@ a:hover .ph-arrow-up-right,button:hover .ph-arrow-up-right{transform:translate(3
 .amh__halo.b{width:min(430px,48vw);aspect-ratio:1;background:var(--violeta-2);left:-170px;bottom:-90px;opacity:.24;animation-delay:-4s}
 .amh__grain{position:absolute;inset:0;z-index:2;opacity:.2;background-image:radial-gradient(rgb(var(--text-rgb)/.5) .55px,transparent .55px);background-size:7px 7px;mask-image:linear-gradient(to bottom,#000,transparent 88%);-webkit-mask-image:linear-gradient(to bottom,#000,transparent 88%);pointer-events:none}
 .amh .scene__body{text-align:center;padding-bottom:clamp(70px,8vw,110px)}
-.amh__logo{display:block;width:clamp(120px,12vw,175px);height:auto;margin:14px auto 26px;color:rgb(var(--text-rgb))}
+.amh__logo{display:block;width:clamp(180px,18vw,260px);height:auto;margin:14px auto 26px;color:rgb(var(--text-rgb))}
 .amh h1{margin:24px auto 18px;max-width:15ch;font-size:clamp(1.9rem,3.4vw,2.9rem)}
 .amh__copy{max-width:62ch;margin-inline:auto;font-size:var(--body);line-height:1.65;color:var(--text-muted)}
 .amh__actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px}
@@ -2007,7 +2007,7 @@ html[data-aviso-de-cookies] .bar{display:none}
      O leque de cinco fotos e uma composicao horizontal: em 375px virava uma
      fileira rolavel ilegivel. Aqui ele vira uma foto so, do tamanho da
      coluna, com as cinco passando em loop — mesma mecanica do reel da home. */
-  .amh__logo{width:150px}
+  .amh__logo{width:180px}
   .amh__fan{display:block;position:relative;overflow:visible;aspect-ratio:3/4;width:min(280px,84%);margin:36px auto 0;padding:0}
   .amh__fan figure{position:absolute;inset:0;width:100%;--r:0deg;--y:0px;opacity:0;animation:amh-slide 20s linear infinite}
   .amh__fan figure:nth-child(3){width:100%}
