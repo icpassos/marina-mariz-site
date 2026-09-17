@@ -55,7 +55,7 @@
     </figure>
 
     <div class="pdh__fases">
-      <p class="pdb__claim rise"><span>A gente explica tudo. Com ciência.</span><span>Com clareza. Com segurança. E… <b>sem neura</b></span></p>
+      <p class="pdb__claim rise"><span>A gente explica tudo. Com ciência.</span><span>Com clareza. Com segurança. E… <b>sem neura.</b></span></p>
     </div>
   </div>
 </section>
@@ -65,7 +65,7 @@
 <section class="scene pod pod-noite pds pod-luz" id="sobre" data-glow data-scene data-tone="dark" aria-labelledby="sobre-titulo">
   <div class="scene__body">
     <div class="pds__grid">
-      <h2 class="t-h2 rise" id="sobre-titulo">O que é o Sem Neura Podcast</h2>
+      <h2 class="t-h2 rise" id="sobre-titulo">O que é o<br>Sem Neura<br>Podcast</h2>
       <div class="pds__text">
         <p class="rise" data-d="1">Um espaço para falar sobre a <strong>maternidade como ela realmente é</strong>: com dúvidas, escolhas, mudanças, alegrias e tudo o que existe entre uma fase e outra.</p>
         <p class="rise" data-d="2">Apresentado pela Dra. Marina Mariz e pela Dra. Carol Flores (ginecologistas, obstetras e mães), o Sem Neura reúne <strong>ciência, experiência e conversas honestas</strong> sobre fertilidade, gestação, parto, puerpério, amamentação e saúde da mulher. Aqui, informação de qualidade não vem para dizer como você deve viver essa experiência. Vem para ajudar você a <strong>entender possibilidades, fazer escolhas</strong> e atravessar cada etapa com mais <strong>clareza e segurança</strong>.</p>
@@ -74,14 +74,14 @@
 
     <h3 class="pds__tag pds__tag--topo rise" data-d="3">Em que fase você está?</h3>
     <ol class="pds__fases rise" data-d="4">
-      <li class="pds__fase"><i class="ph ph-seal-check" aria-hidden="true"></i><strong>Tentando engravidar</strong><span>Fase 01</span></li>
-      <li class="pds__fase"><i class="ph ph-baby" aria-hidden="true"></i><strong>Primeira gestação</strong><span>Fase 02</span></li>
-      <li class="pds__fase"><i class="ph ph-users" aria-hidden="true"></i><strong>Segunda gestação ou mais</strong><span>Fase 03</span></li>
-      <li class="pds__fase"><i class="ph ph-clock-countdown" aria-hidden="true"></i><strong>Me preparando para o parto</strong><span>Fase 04</span></li>
-      <li class="pds__fase"><i class="ph ph-hand-heart" aria-hidden="true"></i><strong>Vivendo o pós-parto</strong><span>Fase 05</span></li>
+      <li class="pds__fase"><i class="ph ph-seal-check" aria-hidden="true"></i><strong>Tentando engravidar</strong></li>
+      <li class="pds__fase"><i class="ph ph-baby" aria-hidden="true"></i><strong>Primeira gestação</strong></li>
+      <li class="pds__fase"><i class="ph ph-users" aria-hidden="true"></i><strong>Segunda gestação ou mais</strong></li>
+      <li class="pds__fase"><i class="ph ph-clock-countdown" aria-hidden="true"></i><strong>Me preparando para o parto</strong></li>
+      <li class="pds__fase"><i class="ph ph-hand-heart" aria-hidden="true"></i><strong>Vivendo o pós-parto</strong></li>
     </ol>
 
-    <p class="pds__tag rise" data-d="5">Estamos com você em todas as fases</p>
+    <p class="pds__tag rise" data-d="5">Estamos com você em todas as fases.</p>
   </div>
 </section>
 
