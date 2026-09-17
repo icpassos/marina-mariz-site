@@ -14,7 +14,7 @@
   <div class="blh__grain" aria-hidden="true"></div>
   <div class="scene__body">
     <h1 class="t-h1 rise" data-d="1" data-split id="blog-titulo"><span class="blh__line">Informação que orienta.</span><span class="blh__line">Conhecimento que dá segurança.</span></h1>
-    <p class="blh__lead rise" data-d="2">Artigos e episódios de podcast produzidos pela Dra. Marina Mariz para que você possa navegar pela maternidade com mais <strong>clareza</strong> e <strong>segurança</strong>.</p>
+    <p class="blh__lead rise" data-d="2">Artigos e episódios de podcast produzidos pela Dra. Marina Mariz para ajudar você a viver a maternidade com mais <strong>clareza, segurança e autonomia</strong>.</p>
 
     {{-- Busca por querystring: /blog?q=... — o termo volta no campo para refinar
          em vez de redigitar. Nada disso e gravado em lugar nenhum (doc 02). --}}
