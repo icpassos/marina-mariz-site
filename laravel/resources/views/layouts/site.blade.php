@@ -27,7 +27,7 @@
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"
         integrity="sha384-6p9AefaqUhEVheRlj1mpAkbngHXy9mbYMrIdcIt4Jlc9lOLIablJq3bBsLOjGwZ7" crossorigin="anonymous">
-<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/site.css?v=3">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="{{ $canonical }}">
 <meta property="og:type" content="{{ $ogTipo ?? 'website' }}">
@@ -75,7 +75,7 @@
 {{-- Barra fixa de agendamento ou barra de leitura, conforme a pagina. --}}
 @yield('pos-rodape')
 
-<script src="/assets/js/site.js"></script>
+<script src="/assets/js/site.js?v=3"></script>
 @include('site.partials.aviso-de-cookies')
 </body>
 </html>

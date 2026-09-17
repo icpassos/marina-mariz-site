@@ -6,6 +6,14 @@
   const $  = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
+  // ponytail: bloqueio no navegador so desencoraja copia casual; conteudo entregue pode ser extraido.
+  const editavel = alvo => alvo instanceof Element && !!alvo.closest('input,textarea,[contenteditable="true"]');
+  document.addEventListener('copy', e => { if (!editavel(e.target)) e.preventDefault(); });
+  document.addEventListener('contextmenu', e => { if (!editavel(e.target)) e.preventDefault(); });
+  document.addEventListener('keydown', e => {
+    if (!editavel(e.target) && (e.ctrlKey || e.metaKey) && ['a', 'c'].includes(e.key.toLowerCase())) e.preventDefault();
+  });
+
   /* --- Abertura: vídeo de fundo ------------------------------------------- */
   if (reduced.matches) $$('.scene__bg video').forEach(v => v.pause());
 

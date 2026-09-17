@@ -1893,3 +1893,6 @@ html[data-aviso-de-cookies] .bar{display:none}
 .lnk__legal{margin:0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;font-size:.72rem}
 .lnk__legal a{color:var(--text-muted);text-decoration:none;min-height:24px;display:inline-flex;align-items:center}
 .lnk__legal a:hover{color:rgb(var(--text-rgb));text-decoration:underline}
+/* Impede selecao casual no site publico; campos de formulario continuam editaveis. */
+body{-webkit-user-select:none;user-select:none}
+input,textarea,[contenteditable="true"]{-webkit-user-select:text;user-select:text}
